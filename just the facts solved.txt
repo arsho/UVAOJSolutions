@@ -1,0 +1,55 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int fa[10001];
+void fact()
+{
+        int temp,i,j;
+        fa[0]=1;
+        for(i=1;i<10001;i++)
+        {
+                temp=fa[i-1]*i;
+                while(temp%10==0)
+                {
+                        temp/=10;
+                }
+                fa[i]=temp%100000;
+        }
+}
+int main()
+{
+        int i,a;
+
+        fact();
+        while(scanf("%d",&a)==1)
+        {
+                i=fa[a]%10;
+                printf("%5d -> %d\n",a,i);
+        }
+        return 0;
+}

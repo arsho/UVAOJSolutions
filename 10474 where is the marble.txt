@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool myfunction (int i,int j)
+{
+    return (i<j);
+}
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int n,q,cas=1;
+    while(cin>>n>>q &&n &&q)
+    {
+        int num,i,j,ar[20000],ans;
+        for(i=0; i<n; i++)
+        {
+            cin>>ar[i];
+        }
+        sort(ar,ar+n);
+        vector<int>v(ar,ar+n);
+        vector<int>::iterator low,up;
+        for(j=0; j<q; j++)
+        {
+            cin>>num;
+            if(j==0)
+                cout<<"CASE# "<<cas<<":"<<endl;
+            if (!binary_search (v.begin(), v.end(), num, myfunction))
+            {
+                cout<<num<<" not found"<<endl;
+            }
+            else
+            {
+                low=lower_bound(v.begin(),v.end(),num);
+                ans=int((low-v.begin()));
+                cout<<num<<" found at "<<ans+1<<endl;
+            }
+        }
+        cas++;
+    }
+    return 0;
+}

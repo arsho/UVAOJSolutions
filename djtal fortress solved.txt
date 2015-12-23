@@ -1,0 +1,65 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+int main()
+{
+    char a[200010];
+    char wtf;
+    int b,test,c,d,e,f,i,j,h,beng;
+    double sq;
+    scanf("%d%c",&test,&wtf);
+
+
+        for(i=1;i<=test;i++)
+        {
+        gets(a);
+        b=strlen(a);
+        c=b;
+        sq=sqrt(c);
+        d=int (sq);
+        e=d*d;
+       beng=d*(d-1);
+        if(e!=c)
+        {
+             printf("INVALID\n");
+
+        }
+        else
+        {
+            for(j=0;j<d;j++)
+            {
+                for(h=j;h<=j+beng;h+=d)
+                printf("%c",a[h]);
+            }
+            printf("\n");
+        }
+        }
+
+    return 0;
+}

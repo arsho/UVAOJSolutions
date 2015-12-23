@@ -1,0 +1,45 @@
+import java.math.*;
+
+import java.util.*;
+
+ 
+
+public class Main {
+
+    public static void main (String [] args)
+
+    {
+
+        Scanner sc = new Scanner(System.in);
+
+        while (sc.hasNext())
+
+        {
+
+            BigInteger a = new BigInteger(sc.next());
+
+            String c = sc.next();
+
+            BigInteger b = new BigInteger(sc.next());
+
+            if(c.equals("/"))
+
+            {
+
+              System.out.println(a.divide(b).toString());
+
+            }
+
+            else {
+
+                System.out.println(a.mod(b));
+
+            }
+
+        }
+
+    }
+
+ 
+
+}

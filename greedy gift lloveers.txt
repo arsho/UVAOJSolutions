@@ -1,0 +1,103 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf long_MAX
+#define pi 2*acos(0.0)
+#define vi vector<long>
+#define  vl vector<long long>
+#define pdd pair<long, long>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<long, long>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) prlongf("Case %ld:",a)
+#define pb push_back
+
+int main()
+{
+    struct
+    {
+        char name[20];
+         long money;
+    } friends[12];
+    long b;
+
+    char temp[20],temp2[20];
+    long i1,k,per, total, i, j,minus,tempcount,receivers,each,tempcount2,gap=0;
+    while(scanf("%ld",&per)==1)
+    {
+            for(b=0;b<12;b++)
+    friends[b].money=0;
+        for(i1=0; i1<per; i1++)
+            scanf("%s",&friends[i1].name);
+        for(i=0; i<per; i++)
+        {
+            scanf("%s",&temp);
+            scanf("%ld%ld",&total,&receivers);
+              if(receivers==0)
+                continue;
+            else
+            {
+            each=total/receivers;
+            tempcount=0;
+            minus=each*receivers;
+            while(strcmp(temp,friends[tempcount].name)!=0)
+            {
+                tempcount++;
+            }
+            friends[tempcount].money-=minus;
+
+                for(j=0; j<receivers; j++)
+                {
+                    scanf("%s",&temp2);
+                    tempcount2=0;
+                    while(strcmp(temp2,friends[tempcount2].name)!=0)
+                    {
+                        tempcount2++;
+                    }
+                    friends[tempcount2].money+=each;
+                }
+            }
+        }
+        if(gap!=0)
+        printf("\n");
+        gap++;
+        for(k=0;k<per;k++)
+        {
+                printf("%s %ld\n",friends[k].name,friends[k].money);
+        }
+    }
+    return 0;
+}

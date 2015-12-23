@@ -1,0 +1,25 @@
+#include<cstdio>
+using namespace std;
+long bigmod(long a,long b,long c)
+{
+    long d;
+    if(b==0)
+    return 1;
+    if(b%2==1)
+    return ((a%c)*bigmod(a,(b-1),c)%c);
+    else
+    {
+        d=(bigmod(a,(b/2),c))%c;
+        return ((d*d)%c);
+    }
+}
+int main()
+{
+    long a,b,c,d,i,j;
+    while(scanf("%ld%ld%ld",&a,&b,&c)==3)
+    {
+        d=bigmod(a,b,c);
+        printf("%ld\n",d);
+    }
+    return 0;
+}

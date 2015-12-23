@@ -1,0 +1,47 @@
+#include <bits/stdc++.h>
+#define inf INT_MAX
+using namespace std;
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int num,n,i,cas,k,tmp,close,ar[1200],t=1,j,i2,i3,abs1,abs2;
+    while(cin>>num)
+    {
+        if(num==0)
+            break;
+        for(i3=0; i3<1200; i3++)
+        {
+            ar[i3]=0;
+        }
+        close=inf;
+        for(i3=0; i3<num; i3++)
+        {
+            cin>>ar[i3];
+        }
+        sort(ar,ar+num);
+        cin>>n;
+        cout<<"Case "<<t<<":"<<endl;
+        for(i2=0; i2<n; i2++)
+        {
+            cin>>cas;
+            for(i=0; i<num-1; i++)
+            {
+                k=ar[i];
+                for(j=i+1; j<num; j++)
+                {
+                    tmp=k+ar[j];
+                    abs1=(abs(cas-tmp));
+                    abs2=(abs(cas-close));
+                    if(abs1<abs2) close=tmp;
+                }
+            }
+            cout<<"Closest sum to ";
+            cout<<cas;
+            cout<<" is ";
+            cout<<close<<".\n";
+        }
+        t++;
+    }
+    return 0;
+}

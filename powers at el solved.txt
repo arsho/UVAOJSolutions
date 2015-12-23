@@ -1,0 +1,59 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        char a[9000],b[9000];
+        int n,m,i,j,k,l,c,d,x,res;
+        while(scanf("%s",&a)==1)
+        {
+                scanf("%s",&b);
+                c=strlen(a);
+                d=strlen(b);
+                if((strcmp(a,"0")==0)&&(strcmp(b,"0")==0))
+                        break;
+                      else if(d==1)
+                        {
+                                n=b[0]-'0';
+                                k=a[c-1]-'0';
+                        }
+                else if(d>1)
+                {
+                k=a[c-1]-'0';
+                l=((b[d-2]-'0')*10)+(b[d-1]-'0');
+                n=l%4;
+                if(n==0)
+                n=4;
+                }
+
+                res=pow(k,n);
+                res=res%10;
+                printf("%d\n",res);
+        }
+        return 0;
+}

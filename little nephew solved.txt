@@ -1,0 +1,40 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        long long a,b,c,d,e,f,g,h,u,j,i,k;
+        while(scanf("%lld%lld%lld%lld%lld",&a,&b,&c,&d,&e)==5)
+        {
+                if(a==0&&b==0&&c==0&&d==0&&e==0)
+                break;
+                f=a*b*c*d*e*d*e;
+                printf("%lld\n",f);
+        }
+        return 0;
+}

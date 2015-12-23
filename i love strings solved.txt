@@ -1,0 +1,71 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+#define PI 3.14159265
+int main()
+{
+    long long con,a,b,c,d,e,f,g,h,i,j,k,m,n,len1,len2;
+    char str1[100001];
+    char str2[1001];
+    while(scanf("%lld",&a)==1)
+    {
+        while(a--)
+        {
+            scanf("%s",&str1);
+            scanf("%lld",&b);
+            while(b--)
+            {
+                scanf("%s",&str2);
+                i=0;
+                bool ans=true;
+                len1=strlen(str1);
+                len2=strlen(str2);
+                if(len2>len1)
+                ans=false;
+                if(ans==true)
+                {
+                    for(i=0;i<len2;i++)
+                    {
+                        if(str1[i]!=str2[i])
+                        {
+                            ans=false;
+                            break;
+                        }
+                    }
+                }
+                if(ans==true)
+                printf("y\n");
+                else
+                printf("n\n");
+            }
+        }
+    }
+
+
+    return 0;
+}

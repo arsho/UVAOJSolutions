@@ -1,0 +1,41 @@
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int b1,b2,b3,g1,g2,g3,c1,c2,c3,min;
+    while(scanf("%d%d%d%d%d%d%d%d%d",&b1,&g1,&c1,&b2,&g2,&c2,&b3,&g3,&c3)==9)
+    {
+        int bcg=0,bgc=0,cbg=0,cgb=0,gbc=0,gcb=0;
+        bgc=b2+b3+g1+g3+c1+c2;
+        bcg=b2+b3+g1+g2+c1+c3;
+        cbg=c2+c3+b1+b3+g1+g2;
+        cgb=c2+c3+b1+b2+g1+g3;
+        gbc=g2+g3+b1+b3+c1+c2;
+        gcb=g2+g3+b1+b2+c1+c3;
+        min=bgc;
+        if(bcg<min)
+        min=bcg;
+        if(cbg<min)
+        min=cbg;
+        if(cgb<min)
+        min=cgb;
+        if(gbc<min)
+        min=gbc;
+        if(gcb<min)
+        min=gcb;
+        if(min==bcg)
+        printf("BCG %d\n",min);
+        else if(min==bgc)
+        printf("BGC %d\n",min);
+        else if(min==cbg)
+        printf("CBG %d\n",min);
+        else if(min==cgb)
+        printf("CGB %d\n",min);
+        else if(min==gbc)
+        printf("GBC %d\n",min);
+        else if(min==gcb)
+        printf("GCB %d\n",min);
+
+    }
+    return 0;
+}

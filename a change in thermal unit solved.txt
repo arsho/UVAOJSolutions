@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+    long int a,b,c,d,e,f,i,j;
+    double p,in,pc,la;
+    while(scanf("%ld",&a)==1)
+    {
+        for(i=1;i<=a;i++)
+        {
+            scanf("%lf%lf",&p,&in);
+            pc=1.8*p+32+in;
+            la=(pc-32)/1.8;
+            printf("Case %ld: %.2lf\n",i,la);
+        }
+    }
+    return 0;
+}

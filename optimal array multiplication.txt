@@ -1,0 +1,105 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define mod 1000000000
+int s[1000][1000],m[1000][1000],p[1000];
+void matrix(int p[],int n)
+{
+    int a,b,c,d,f,i,j,k,l,q;
+    for(i=1; i<=n; i++)
+        m[i][i]=0;
+    for(l=2; l<=n; l++)
+    {
+        for(i=1; i<=n-l+1; i++)
+        {
+            j=i+l-1;
+            m[i][j]=inf;
+            for(k=i; k<=j-1; k++)
+            {
+                q=m[i][k]+m[k+1][j]+(p[i-1]*p[k]*p[j]);
+                if(q<m[i][j])
+                {
+                    m[i][j]=q;
+                    s[i][j]=k;
+                }
+            }
+        }
+    }
+}
+void print(int s[1000][1000],int i,int j)
+{
+    if(i==j)
+        printf("A%d",i);
+    else
+    {
+        printf("(");
+        print(s,i,s[i][j]);
+        printf(" x ");
+        print(s,s[i][j]+1,j);
+        printf(")");
+    }
+}
+int main()
+{
+    int n,t,a,b,c,i,j,k,l,cas=0;
+    while(cin>>n && n)
+    {
+        for(t=1; t<=n; t++)
+        {
+            cin>>a>>b;
+            if(t==1)
+            {
+                p[0]=a;
+                p[t]=b;
+            }
+            else
+            {
+                p[t]=b;
+            }
+        }
+        cas++;
+        printf("Case %d: ",cas);
+        matrix(p,n+1);
+        print(s,1,n);
+        printf("\n");
+    }
+    return 0;
+}
+/*
+6
+30 35
+35 15
+15 5
+5 10
+10 20
+20 25
+*/

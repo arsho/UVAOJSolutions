@@ -1,0 +1,72 @@
+#include <bits/stdc++.h>
+using namespace std;
+long long mx=1000005;
+long long pr[1000007];
+long long flag[1000007];
+long long man(long long n)
+{
+    long long i,res=1,sq=sqrt(n);
+    for(i=2; i<=sq; i++)
+    {
+        if(n%i==0)
+        {
+            res=0;
+            break;
+        }
+    }
+    return res;
+}
+void seive()
+{
+    long long i,j,k,sq=sqrt(mx);
+    flag[2]=1;
+    for(i=3; i<=mx; i+=2)
+        flag[i]=1;
+    for(i=2; i<=sq; i++)
+    {
+        if(flag[i]==1)
+        {
+            for(j=2*i; j<=mx; j+=i)
+            {
+                flag[j]=0;
+            }
+        }
+    }
+}
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    seive();
+    long long cas,p,t,n,a,b;
+    char c;
+    cin>>cas;
+    bool check=true;
+    for(t=1; t<=cas; t++)
+    {
+        if(check==false)
+            cin>>c;
+        check=false;
+        cin>>p;
+        n=pow(2,p);
+        n-=1;
+        if(n>mx-1)
+        {
+            if(p>mx-1)
+                a=man(p);
+            else
+                a=flag[p];
+            b=man(n);
+        }
+        else
+        {
+            a=flag[p];
+            b=flag[n];
+        }
+        if((a==1)&&(b==1))
+            cout<<"Yes"<<endl;
+        else
+            cout<<"No"<<endl;
+    }
+    return 0;
+}

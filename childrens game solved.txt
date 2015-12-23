@@ -1,0 +1,44 @@
+
+#include <iostream>
+#include <cstdio>
+#include <algorithm>
+#include <cstring>
+#include <string>
+#include <cctype>
+#include <stack>
+#include <queue>
+#include <list>
+#include <vector>
+#include <map>
+#include <sstream>
+#include <bitset>
+#include <utility>
+#include <set>
+#include <cmath>
+
+using namespace std;
+
+bool comp (string x, string y)
+{
+    string a1 = x + y;
+    string a2 = y + x;
+
+    if ( a1 > a2 ) return true;
+    return false;
+}
+int main ()
+{
+    int sho,i;
+    string line [50 + 5];
+    while ( scanf ("%d", &sho)==1&& sho )
+    {
+        for (  i = 0; i < sho; i++ )
+           cin>>line[i];
+        sort (line, line + sho,comp);
+        for ( i = 0; i < sho; i++ )
+            cout<<line[i];
+        printf ("\n");
+    }
+    return 0;
+}
+

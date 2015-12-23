@@ -1,0 +1,43 @@
+#include <set>
+#include <map>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <climits>
+#include <cctype>
+#include <cstdio>
+#include <string>
+#include <vector>
+#include <cassert>
+#include <cstdlib>
+#include <cstring>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main()
+{
+int a,b,c,d;
+    for(int i=6; i<201; i++)
+    {  a = i*i*i;
+        for(int j=2; j<i; j++)
+        {  b = j*j*j;
+            for(int k=j; k<i; k++)
+            { c = k*k*k;
+                for( int l=k; l<i; l++)
+                { d = l*l*l;
+                    if( a == (b+c+d) )
+                    {
+                        printf("Cube = %d, Triple = (%d,%d,%d)\n",i,j,k,l);
+                    }
+                }
+            }
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,113 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+#define PI 3.14159265
+long long ss(long long a)
+{
+
+    long long sum=0,num,s;
+    num=a;
+            while(num>0)
+            {
+                sum+=num%10;
+                num/=10;
+            }
+            while(sum>=10)
+            {
+                sum=ss(sum);
+            }
+            return sum;
+}
+
+int main()
+{
+    long long a,b,c,d,d1,d2,d3,d4,d5,d6,d7,su,sum,e,f,g,h,i,j,k,l;
+    char line[800];
+    while(scanf("%lld",&a)==1)
+    {
+        getchar();
+        for(i=1;i<=a;i++)
+        {
+            gets(line);
+            b=strlen(line);
+            c=(line[1]-48)+(line[3]-48)+(line[6]-48)+(line[8]-48)+(line[11]-48)+(line[13]-48)+(line[16]-48)+(line[18]-48);
+
+
+            d=(line[0]-48)*2;
+            if(d>=10)
+            d=ss(d);
+
+
+            d1=(line[2]-48)*2;
+            if(d1>=10)
+            d1=ss(d1);
+
+
+            d2=(line[5]-48)*2;
+            if(d2>=10)
+            d2=ss(d2);
+
+
+            d3=(line[7]-48)*2;
+            if(d3>=10)
+            d3=ss(d3);
+
+
+            d4=(line[10]-48)*2;
+            if(d4>=10)
+            d4=ss(d4);
+
+
+            d5=(line[12]-48)*2;
+            if(d5>=10)
+            d5=ss(d5);
+
+
+            d6=(line[15]-48)*2;
+            if(d6>=10)
+            d6=ss(d6);
+
+
+            d7=(line[17]-48)*2;
+            if(d7>=10)
+            d7=ss(d7);
+
+            su=d+d1+d2+d3+d4+d5+d6+d7;
+
+            sum=su+c;
+           
+            if(sum%10==0)
+            printf("Valid\n");
+            else
+            printf("Invalid\n");
+
+
+        }
+    }
+    return 0;
+}

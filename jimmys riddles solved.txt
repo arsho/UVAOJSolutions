@@ -1,0 +1,33 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Dell
+ */
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+
+class Main {
+
+    public static void main(String args[]) {
+        String VERB = "(hate|love|know|like)s*";
+        String NOUN = "(tom|jerry|goofy|mickey|jimmy|dog|cat|mouse)";
+        String ARTICLE = "(a|the)";
+        String ACTOR = "(" + NOUN + "|" + ARTICLE + " " + NOUN + ")";
+        String ACTIVE_LIST = "(" + ACTOR + " and )*" + ACTOR;
+        String ACTION = ACTIVE_LIST + " " + VERB + " " + ACTIVE_LIST;
+        String STATEMENT = ACTION + "( , " + ACTION + ")*";
+
+        Scanner sc = new Scanner(System.in);
+        String sho;
+        while (sc.hasNext()) {
+            sho = sc.nextLine();
+            System.out.println(sho.replaceAll(" +", " ").trim().matches(STATEMENT) ? "YES I WILL" : "NO I WON'T");
+
+        }
+    }
+}

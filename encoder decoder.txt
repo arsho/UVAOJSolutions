@@ -1,0 +1,88 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+#define PI 3.14159265
+
+int main()
+{
+    char line[2500];
+    long long a,b,c,d,e,f,g,h,i,j,k,l,p,o;
+
+    while(gets(line))
+    {
+        a=strlen(line);
+        if(line[0]>='0'&&line[0]<='9')
+        {
+            for(i=(a-1);i>=0;)
+            {
+                if(line[i]=='1')
+                {
+                    b=line[i]-48;
+                    c=line[i-1]-48;
+                    e=line[i-2]-48;
+
+                    d=(b*100)+(c*10)+e;
+                    printf("%c",d);
+                    i=i-3;
+                }
+                else
+                {
+                    b=line[i]-48;
+                    c=line[i-1]-48;
+                    d=(b*10)+c;
+                    printf("%c",d);
+                    i=i-2;
+                }
+
+            }
+            printf("\n");
+        }
+        else
+        {
+        for(i=(a-1);i>=0;i--)
+        {
+            b=line[i];
+            if(b<100)
+            {
+                printf("%lld%lld",b%10,b/10);
+            }
+            else
+            {
+                c=b%10;
+                b=b/10;
+                d=b%10;
+                e=b/10;
+                printf("%lld%lld%lld",c,d,e);
+            }
+
+        }
+        printf("\n");
+        }
+    }
+    return 0;
+}

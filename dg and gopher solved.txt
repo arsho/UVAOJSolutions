@@ -1,0 +1,61 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    double bg,d1,d3,d2,x1,y1,x2,y2,b,c,d,e,f,g,h,k,o,p,l;
+   double x[1000];
+    double y[1000];
+    long long i,j,a;
+    while(scanf("%lld",&a)==1)
+    {
+        bg=0;
+       scanf("%lf%lf%lf%lf",&x1,&y1,&x2,&y2);
+       for(i=0;i<a;i++)
+       {
+          scanf("%lf",&x[i]);
+          scanf("%lf",&y[i]);
+       }
+       for(j=0;j<a;j++)
+       {
+          d1=sqrt((x1-x[j])*(x1-x[j])+(y1-y[j])*(y1-y[j]));
+          d2=sqrt((x2-x[j])*(x2-x[j])+(y2-y[j])*(y2-y[j]));
+          d3=2.0*d1;
+          if(d3<=d2)
+          {
+            printf("The gopher can escape through the hole at (%.3lf,%.3lf).\n",x[j],y[j]);
+            bg=9;
+            break;
+          }
+          else bg=6;
+        }
+        if(bg==6)
+        printf("The gopher cannot escape.\n");
+    }
+    return 0;
+}

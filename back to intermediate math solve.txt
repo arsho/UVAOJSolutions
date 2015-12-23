@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a,i;
+    double re,d,v,u,t,tt;
+    scanf("%d",&a);
+    for(i=1;i<=a;i++)
+    {
+        scanf("%lf%lf%lf",&d,&v,&u);
+        if(v>=u)
+        printf("Case %d: can't determine\n",i);
+        else
+        {
+        t=d/u;
+        tt=d/sqrt(u*u-v*v);
+        if(t==tt)
+        {
+        printf("Case %d: can't determine\n",i);
+        }
+        else
+        {
+            re=fabs(t-tt);
+            printf("Case %d: %.3lf\n",i,re);
+        }
+        }
+    }
+    return 0;
+}

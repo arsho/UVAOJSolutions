@@ -1,0 +1,85 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    double b,c,d,e,f,g,h,j,k,l,p;
+    long a,i;
+    double vat,vf=180000,v10=480000,v15=880000,v20=1180000,v25;
+    scanf("%ld",&a);
+
+        for(i=1;i<=a;i++)
+        {
+            vat=0;
+            scanf("%lf",&b);
+            if(b>v20)
+            {
+                c=b-v20;
+                vat=c*.25+300000*.20+400000*.15+300000*.10;
+                vat=ceil(vat);
+               printf("Case %ld: %.0lf\n",i,vat);
+
+            }
+            else if(b>v15)
+            {
+                c=b-v15;
+                vat=c*.20+400000*.15+300000*.10;
+                vat=ceil(vat);
+               printf("Case %ld: %.0lf\n",i,vat);
+
+            }
+            else if(b>v10)
+            {
+                c=b-v10;
+                vat=c*.15+300000*.10;
+                vat=ceil(vat);
+               printf("Case %ld: %.0lf\n",i,vat);
+
+            }
+
+            else if(b>vf)
+            {
+                c=b-vf;
+                vat=c*.10;
+                vat=ceil(vat);
+                if(vat<=2000)
+                printf("Case %ld: 2000\n",i);
+                else
+                printf("Case %ld: %.0lf\n",i,vat);
+
+            }
+            else
+            printf("Case %ld: 0\n",i);
+
+
+
+
+    }
+    return 0;
+
+}

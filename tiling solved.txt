@@ -1,0 +1,29 @@
+
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args)
+    {
+
+        Scanner sc = new Scanner(System.in);
+      
+		BigInteger[] res = new BigInteger[251];
+		res[0] = BigInteger.ONE;
+		res[1] = BigInteger.ONE;
+		BigInteger two = new BigInteger("2");
+		for (int i = 2; i < res.length; i++)
+			res[i] = res[i - 1].add(two.multiply(res[i - 2]));
+		
+		while (sc.hasNext()) {
+			int input = sc.nextInt();
+			System.out.println(res[input]);
+		}
+	}
+}
+
+    
+

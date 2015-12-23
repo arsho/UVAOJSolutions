@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+    int r,c,t,cas,i,j,k,tmp,ans;
+    while(scanf("%d%d",&r,&c)==2)
+    {
+        ans=0;
+        char ch;
+        if(r==0 && c==0)
+            break;
+        int ar[205][205];
+        for(i=0;i<=(200);i++)
+        {
+            for(j=0;j<=(200);j++)
+            {
+                ar[i][j]=46;
+            }
+        }
+        for(i=100;i<(100+r);i++)
+        {
+            for(j=100;j<(100+c);j++)
+            {
+                cin>>ch;
+                ar[i][j]=ch;
+            }
+        }
+        for(i=100;i<(100+r);i++)
+        {
+            for(j=100;j<(100+c);j++)
+            {
+                if(ar[i][j]==42)
+                {
+                    if(ar[i-1][j-1]==46&&ar[i-1][j]==46&&ar[i-1][j+1]==46 && ar[i][j-1]==46&&ar[i][j+1]==46 && ar[i+1][j-1]==46&&ar[i+1][j]==46&&ar[i+1][j+1]==46)
+                    {
+                        ans++;
+                    }
+                }
+            }
+        }
+        cout<<ans<<endl;
+    }
+    return 0;
+}
+

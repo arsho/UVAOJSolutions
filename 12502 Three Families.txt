@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+        int cas,t;
+        while(cin>>cas)
+        {
+                for(t=1;t<=cas;t++)
+                {
+                        int x,y,z,bonus,earn,total;
+                        cin>>x>>y>>z;
+                        earn=z*(2*x-y)/(x+y);
+                        total=earn;
+                        printf("%d\n",total);
+                }
+        }
+        return 0;
+}

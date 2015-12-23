@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long long int a,b,c,e,f,g,h,i,j;
+    double d;
+    while(scanf("%lld%lld",&a,&b)==2)
+    {
+        if(a==0&&b==0)
+        break;
+        else
+        {
+            c=0;
+            for(i=a;i<=b;i++)
+            {
+                d=sqrt(i);
+                e=sqrt(i);
+                if(d==e)
+                c++;
+            }
+            printf("%lld\n",c);
+        }
+    }
+}

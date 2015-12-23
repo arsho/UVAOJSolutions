@@ -1,0 +1,58 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+#define PI 3.14159265
+
+int main()
+{ int P,B,H,W;
+while(scanf("%d %d %d %d",&P,&B,&H,&W)==4)
+{
+int cost=B+1,i;
+while(H--)
+{
+int price,bed;
+scanf("%d",&price);
+for(i=1;i<=W;i++)
+{
+scanf("%d",&bed);
+if(bed>=P)
+{
+if(cost>(P*price))
+cost=P*price;
+}
+}
+}
+if(cost < B)
+printf("%d\n",cost);
+else
+printf("stay home\n");
+
+}
+return 0;
+
+}

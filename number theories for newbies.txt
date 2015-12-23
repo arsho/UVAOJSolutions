@@ -1,0 +1,66 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        long long min,max,a,b,i,j,c,d,r,f;
+        char line[20];
+        long long temp,res;
+        while(gets(line))
+        {
+                a=strlen(line);
+                sort(line,line+a);
+                b=0;
+                for(i=a-1;i>=0;i--)
+                {
+                       b=(b*10)+line[i]-'0';
+                }
+                max=b;
+                if(line[0]=='0')
+                {
+                for(i=0;i<a;i++)
+                {
+                        if(line[i]>'0')
+                        {
+                              temp=i;
+                              break;
+                        }
+                }
+                swap(line[0],line[temp]);
+                }
+                c=0;
+                for(i=0;i<a;i++)
+                {
+                        c=c*10+line[i]-'0';
+                }
+                min=c;
+                res=max-min;
+                printf("%lld - %lld = %lld = 9 * %lld\n",max,min,res,res/9);
+        }
+        return 0;
+}

@@ -1,0 +1,40 @@
+#include<cstdio>
+#include<cmath>
+int main()
+{
+        int a,i,j,k,b,start,end;
+        double sheet;
+        while(scanf("%d",&a)==1)
+        {
+                if(a==0)
+                break;
+                if(a==1)
+                {
+                                printf("Printing order for 1 pages:\nSheet 1, front: Blank, 1\n");
+                                continue;
+                }
+                sheet=ceil(a/4.00);
+                start=1;end=4*sheet;
+                printf("Printing order for %d pages:\n",a);
+                for(i=0;i<sheet;i++)
+                {
+                        printf("Sheet %d, front:",i+1);
+                        if(end>a)
+                        printf(" Blank, ");
+                        else
+                        printf(" %d, ",end);
+                        printf("%d\n",start);
+                        end--,start++;
+                        printf("Sheet %d, back :",i+1);
+                         printf(" %d, ",start);
+                         if(end>a)
+                        printf("Blank\n");
+                        else
+                        printf("%d\n",end);
+
+                        end--,start++;
+                }
+
+        }
+      return 0;
+}

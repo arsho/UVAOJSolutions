@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    int a,b,i,j,k;
+    char on[5];
+    scanf("%d",&a);
+
+    for(i=1;i<=a;i++)
+    {
+        scanf("%s",&on);
+        k=strlen(on);
+        if(k==5)
+        printf("3\n");
+        else if((on[0]=='o'&&on[1]=='n')||(on[0]=='o'&&on[2]=='e')||(on[2]=='e'&&on[1]=='n'))
+        printf("1\n");
+        else
+        printf("2\n");
+    }
+    return 0;
+}

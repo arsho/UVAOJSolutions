@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+    float H,M,totalM,passh,passm,block;
+   
+    while(scanf("%f:%f",&H,&M)&&(H!=0 || M!=0))
+    {
+        totalM=H*60 + M;
+        passh = 5*totalM/60;
+        if(passh > 60)
+            passh=passh-60;
+        passm = (int)totalM%60;
+        block=(passh > passm)?(passh-passm)*6:(passm-passh)*6;
+        if(block > 180)
+            block=360-block;
+        printf("%.3f\n",block);
+    }
+    return(0);
+}

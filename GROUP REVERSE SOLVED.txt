@@ -1,0 +1,51 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    char line[5000];
+    long long a,b,c,d,e,f,g,h,i,j,k,l;
+    while(scanf("%lld",&a)==1)
+    {
+        if(a==0)
+        break;
+        getchar();
+        gets(line);
+        b=strlen(line);
+        c=b/a;
+        for(i=0;i<b;i+=c)
+        {
+            for(j=i+c-1;j>=i;j--)
+            {
+                printf("%c",line[j]);
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}

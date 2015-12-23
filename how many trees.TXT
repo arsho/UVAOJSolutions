@@ -1,0 +1,29 @@
+
+import java.math.BigDecimal;
+import java.util.Scanner;
+
+
+public class Main {
+   static BigDecimal precal[]=new BigDecimal[1005];
+   static void pre()
+   {
+       BigDecimal i1;
+       int i;
+   
+       precal[1]=BigDecimal.ONE;
+        for (i = 2; i < 1001; i++) {
+            precal[i] = precal[i-1].multiply(new BigDecimal((2*(i-1)+2)*(2*(i-1)+1))).divide(new BigDecimal(((i-1)+1)*((i-1)+2)));
+        }
+       
+   }
+   
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        pre();
+        while(sc.hasNext())
+        {
+            int sho=sc.nextInt();
+            System.out.println(precal[sho]);
+        }
+    }
+}

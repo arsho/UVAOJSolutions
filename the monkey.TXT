@@ -1,0 +1,78 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+
+long long arr [100000 + 10];
+
+int main ()
+{
+    int testCase; scanf ("%d", &testCase);
+    int cases = 0;
+
+    while ( testCase-- ) {
+        int n; scanf ("%d", &n);
+
+        arr [0] = 0;
+
+        for ( int i = 1; i <= n; i++ ) scanf ("%lld", &arr [i]);
+
+        int maxi = -9999;
+
+        for ( int i = 1; i <= n; i++ ) {
+            int diff = arr [i] - arr [i - 1];
+            if ( diff > maxi ) maxi = diff;
+        }
+
+        int res = maxi;
+
+        for ( int i = 1; i <= n; i++ ) {
+            int diff = arr [i] - arr [i - 1];
+            if ( diff == maxi ) maxi--;
+            else if ( diff > maxi ) { res++; break; }
+        }
+
+        printf ("Case %d: %d\n", ++cases, res);
+    }
+
+	return 0;
+}

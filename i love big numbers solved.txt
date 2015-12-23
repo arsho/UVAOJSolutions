@@ -1,0 +1,40 @@
+import java.io.*;
+import java.math.*;
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+   
+    public static void main(String[] args) {
+       
+        int a;
+        BigInteger zer,res,p,sum;
+        
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext())
+        {
+            a=sc.nextInt();
+           sum=BigInteger.ZERO;
+           zer=BigInteger.ZERO;
+           BigInteger n=BigInteger.ONE;
+        for(int i=1;i<=a;i++)
+        {
+            n=n.multiply(BigInteger.valueOf(i));
+        }
+        
+            res=n;
+           
+            while(res.compareTo(zer)>0)
+            {
+                p=res.mod(BigInteger.TEN);
+                sum=sum.add(p);
+                res=res.divide(BigInteger.TEN);
+            }
+            System.out.println(sum);
+            
+        }
+    }
+    
+    
+}

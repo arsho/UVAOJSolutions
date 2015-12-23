@@ -1,0 +1,63 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+
+long long res[10000007];
+void s()
+{
+       double d=0.0,e;
+       long long i;
+               for(i=1;i<=10000005;i++)
+               {
+                       d+=(log10(i));
+                       e=ceil(d);
+                       res[i]=e;
+               }
+}
+int main()
+{
+        s();
+        long long cas,a,i;
+      while(scanf("%lld",&cas)==1)
+      {
+
+      for(i=1;i<=cas;i++)
+      {
+              scanf("%lld",&a);
+              if(a==1)
+              {
+                      printf("1\n");
+                      continue;
+              }
+              printf("%lld\n",res[a]);
+      }
+        }
+return 0;
+}

@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+        ios_base::sync_with_stdio(0);
+        cin.tie(0);
+        int n,m,c,t=1;
+        int cas=0;
+        while(cin>>n>>m>>c)
+        {
+                if(n==0 && m==0 &&c==0)
+                        break;
+                int ar[50],i,j,state[500000],a;
+                for(i=1;i<=n;i++)
+                {
+                        cin>>ar[i];
+                        state[i]=0;
+                }
+                int maxx=-99999,total=0;
+                for(j=1;j<=m;j++)
+                {
+                        cin>>a;
+                        if(state[a]==0)
+                        {
+                                total+=ar[a];
+                                if(total>maxx)
+                                        maxx=total;
+                                state[a]=5;
+                        }
+                        else if(state[a]==5)
+                        {
+                                total-=ar[a];
+                                state[a]=0;
+                        }
+                }
+
+                cout<<"Sequence "<<t<<endl;
+                if(maxx>c)
+                {
+                        cout<<"Fuse was blown."<<endl;
+                }
+                else
+                {
+                        cout<<"Fuse was not blown."<<endl;
+                        cout<<"Maximal power consumption was "<<maxx<<" amperes."<<endl;
+                }
+                cout<<endl;
+                cas++;
+                t++;
+        }
+        return 0;
+}

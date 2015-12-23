@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main()
+{
+    double Term1,  Term2,  Final,  Attendance,  Class_Test1,  Class_Test2,  Class_Test3, overall, Class_Test;
+    int test_case, t;
+
+    while(scanf("%d", &test_case)==1)
+    {
+        for(t=1; t<=test_case; t++)
+        {
+            scanf("%lf %lf %lf %lf %lf %lf %lf",&Term1,  &Term2,  &Final,  &Attendance,  &Class_Test1,  &Class_Test2,  &Class_Test3);
+            if((Class_Test1<=Class_Test2) && (Class_Test1<= Class_Test3))
+            {
+                Class_Test=(Class_Test2+Class_Test3)/2.0;
+            }
+            else if((Class_Test2<=Class_Test3) && (Class_Test2<= Class_Test1))
+            {
+                Class_Test=(Class_Test1+Class_Test3)/2.0;
+            }
+            else if((Class_Test3<=Class_Test2) && (Class_Test3<= Class_Test1))
+            {
+                Class_Test=(Class_Test2+Class_Test1)/2.0;
+            }
+
+            overall=Term1+  Term2+  Final+  Attendance+ Class_Test;
+
+            if(overall>=90.0 && overall<=100.0)   printf("Case %d: A\n", t);
+            else if(overall>=80.0 && overall<90.00)   printf("Case %d: B\n", t);
+            else if(overall>=70.0 && overall<80.00)   printf("Case %d: C\n" ,t);
+            else if(overall>=60.0 && overall<70.00)   printf("Case %d: D\n", t);
+            else if(overall<60.00)   printf("Case %d: F\n", t);
+        }
+    }
+    return 0;
+}

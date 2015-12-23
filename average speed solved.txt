@@ -1,0 +1,74 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+
+int main()
+{
+    double res=0.0;
+    int h,m,s,i,j,spd=0,preh=0,prem=0,pres=0,prespd=0;
+    char ch,ch1;
+    while(scanf("%d%c%d%c%d",&h,&ch,&m,&ch1,&s)==5)
+    {
+        if (cin.peek() == ' ')
+        {
+            scanf("%d",&spd);
+            res+=(((h*3600+m*60+s)-(preh*3600+prem*60+pres))*prespd/3600.00);
+            prespd=spd;
+            preh=h;
+            prem=m;
+            pres=s;
+        }
+        else
+        {
+            res+=(((h*3600+m*60+s)-(preh*3600+prem*60+pres))*prespd/3600.00);
+            preh=h;
+            prem=m;
+            pres=s;
+            printf("%d%d:%d%d:%d%d %.2f km\n",h/10,h%10,m/10,m%10,s/10,s%10,res);
+        }
+    }
+    return 0;
+}

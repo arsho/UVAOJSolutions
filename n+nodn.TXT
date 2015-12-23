@@ -1,0 +1,94 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+
+long nood(long a)
+{
+    long b=sqrt(a),sho=0,i;
+    for(i=1; i<=b; i++)
+    {
+        if(a%i==0)
+        {
+            sho+=2;
+        }
+    }
+    if(b*b==a)
+        sho--;
+    return sho;
+
+}
+long res[65002];
+void ans()
+{
+    long i,j,f, ss, sorida;
+    res[0]=1;
+    for(i=1; i<=65000; i++)
+    {
+        sorida=res[i-1];
+        res[i]=sorida+nood(sorida);
+    }
+
+}
+long answer[1000010];
+int main()
+{
+    ans();
+    int cas,p;
+    scanf("%d",&cas);
+    long a,b,c,d,e,f,g,h,i,j;
+    answer[1]=1;
+    for(i=2; i<=1000003; i++)
+    {
+        answer[i]=answer[i-1]+binary_search(res,res+65000,i);
+              }
+              for(p=1; p<=cas; p++)
+    {
+        scanf("%ld%ld",&a,&b);
+        printf("Case %d: ",p);
+        cout<<answer[b]-answer[a-1]<<endl;
+    }
+    return 0;
+}

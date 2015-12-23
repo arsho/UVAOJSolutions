@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Main{
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        ArrayList ar=new ArrayList();
+        int n,len,mid1,mid2,res;
+        while(sc.hasNext()){
+            n=sc.nextInt();
+            ar.add(n);
+            Collections.sort(ar);
+            len=ar.size();
+            if(len%2==0)
+            {
+                mid1=(int) ar.get(len/2);
+                mid2=(int) ar.get((len/2)-1);
+                res=(int) Math.floor((mid1+mid2)/2.0);
+            }
+            else
+            {
+                res=(int) ar.get(len/2);
+            }
+            System.out.println(res);
+        }
+    }
+    
+}

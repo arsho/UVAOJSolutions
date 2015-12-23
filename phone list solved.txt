@@ -1,0 +1,86 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+string phone[10000+10];
+bool check(string a, string b)
+{
+    if(b.size()<a.size())
+        return false;
+    for(int i=0; i<a.size(); i++)
+    {
+        if(a[i]!=b[i])
+            return false;
+    }
+    return true;
+}
+int main()
+{
+    int cas2,cas,i,j,k;
+    scanf("%d",&cas);
+    for(i=0; i<cas; i++)
+    {
+        cin>>cas2;
+        for(j=0; j<cas2; j++)
+            cin>>phone[j];
+        sort(phone,phone+cas2);
+        bool ans=true;
+        for(int k=0; k<cas2-1; k++)
+        {
+            if (check (phone [k], phone [k+ 1]))
+            {
+                ans = false;
+                break;
+            }
+        }
+        if(ans==false)
+        {
+            printf("NO\n");
+        }
+        else
+            printf("YES\n");
+    }
+    return 0;
+}

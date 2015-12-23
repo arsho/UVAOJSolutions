@@ -1,0 +1,27 @@
+
+import java.util.Scanner;
+import java.math.BigInteger;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BigInteger a, b;
+        String line1, line2;
+        int len1, len2, c, d, e, i, j, temp;
+        while (sc.hasNext()) {
+            line1 = sc.next();
+            len1 = line1.length();
+            a = new BigInteger(line1);
+            b = a.multiply(a);
+            line2 = b.toString();
+            boolean index = line2.endsWith(line1);
+            if (index == false) {
+                System.out.println("Not an Automorphic number.");
+            } else {
+                System.out.println("Automorphic number of " + len1 + "-digit.");
+            }
+        }
+
+    }
+}

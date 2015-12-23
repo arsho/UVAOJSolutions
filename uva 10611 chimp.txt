@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+main()
+{
+        ios_base::sync_with_stdio(0); cin.tie(0);
+    int i,t,q,j;
+    vector<int>v;
+    vector<int>::iterator lowpos,highpos;
+    int h,low,high,tmp;
+    scanf("%d",&t);
+    for(i=0; i<t; i++)
+    {
+        scanf("%d",&tmp);
+        v.push_back(tmp);
+    }
+    scanf("%d",&q);
+    for(j=0; j<q; j++)
+    {
+        scanf("%d",&h);
+        lowpos=lower_bound(v.begin(),v.end(),h);
+        highpos=upper_bound(v.begin(),v.end(),h);
+        low=(int)(lowpos-v.begin())-1;
+        high=(int)(highpos-v.begin());
+        if(high>v.size()-1)
+            high=-9;
+        if(low>=0)
+            cout<<v.at(low);
+        else
+            cout<<"X";
+        cout<<" ";
+        if(high>0)
+            cout<<v.at(high);
+        else
+            cout<<"X";
+        cout<<endl;
+    }
+    return 0;
+}

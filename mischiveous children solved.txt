@@ -1,0 +1,74 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+#define PI 3.14159265
+long long fa[23];
+void fact()
+{
+    long long j,i,f,b,c;
+    fa[0]=1;
+    for(i=1;i<=22;i++)
+    {
+        fa[i]=fa[i-1]*(i);
+    }
+
+}
+
+int main()
+{
+    fact();
+    long long bal,n,m,a,b,c,i,j,k,repeat[50],res,rep[100];
+    char line[50];
+    while(scanf("%lld",&a)==1)
+    {
+        getchar();
+        for(i=1;i<=a;i++)
+        {
+         for(bal=0;bal<99;bal++)
+         rep[bal]=0;
+
+        gets(line);
+        b=strlen(line);
+        res=fa[b];
+        for(j=0;j<b;j++)
+        {
+            rep[line[j]-65]++;
+        }
+
+        for(n=0;n<30;n++)
+        {
+            if(rep[n]>0)
+            res/=fa[rep[n]];
+        }
+
+
+        printf("Data set %lld: %lld\n",i,res);
+        }
+    }
+    return 0;
+}

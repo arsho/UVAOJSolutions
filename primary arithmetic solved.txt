@@ -1,0 +1,77 @@
+#include<stdio.h>
+int main()
+{
+    long long int k,a,b,c[10],d[10],e[10],f,g,h,i,j,m,n,u;
+    while(scanf("%lld%lld",&a,&b)==2)
+    {
+        m=a;
+        n=b;
+        if(a==0&&b==0)
+        break;
+        else
+        {
+            i=0;
+            if(a==0)c[i++]=0;
+            while(a>0)
+            {
+                c[i]=a%10;
+                i++;
+                a=a/10;
+            }
+            j=0;
+            if(b==0)d[j++]=0;
+            while(b>0)
+            {
+                d[j]=b%10;
+                j++;
+                b=b/10;
+            }
+            f=0;
+            if(m>n)
+            {
+                u=0;
+            for(k=0;k<=i-1;k++)
+            {
+                e[k]=c[k]+u;
+                if(k<j)e[k]+=d[k];
+                if(e[k]>9)
+                {
+                    u=1;
+                    f++;
+                }
+                else u=0;
+            }
+            
+            if(f==0)
+            printf("No carry operation.\n");
+            else if(f==1)
+            printf("%lld carry operation.\n",f);
+            else
+            printf("%lld carry operations.\n",f);
+            }
+
+            else
+            {
+                u=0;
+            for(k=0;k<=j-1;k++)
+            {
+                e[k]=d[k]+u;
+                if(k<i)e[k]+=c[k];
+                if(e[k]>9){
+                f++;
+                u=1;
+                }
+                else u=0;
+            }
+            if(f==0)
+            printf("No carry operation.\n");
+            else if(f==1)
+            printf("%lld carry operation.\n",f);
+            else
+            printf("%lld carry operations.\n",f);
+            }
+
+        }
+    }
+    return 0;
+}

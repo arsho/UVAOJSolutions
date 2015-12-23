@@ -1,0 +1,89 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+
+int main()
+{
+    char line[5000];
+int max=0, l[26], u[26], i, j, len;
+    while(gets(line))
+    {
+
+        memset(l, 0, sizeof l);
+        memset(u, 0, sizeof u);
+max=0;
+        len=strlen(line);
+        for(i=0; i<len; i++)
+        {
+            if(line[i]>='A'&&line[i]<='Z')
+                u[line[i]-65]++;
+            if(line[i]>='a'&&line[i]<='z')
+                l[line[i]-97]++;
+
+        }
+        for(j=0; j<26; j++)
+        {
+
+            if(u[j]>max)
+                max=u[j];
+            if(l[j]>max)
+                max=l[j];
+        }
+        for(i=0; i<26; i++)
+        {
+            if(u[i]==max)
+                printf("%c",i+65);
+        }
+
+        for(i=0; i<26; i++)
+        {
+            if(l[i]==max)
+                printf("%c",i+97);
+        }
+        printf(" %d\n",max);
+    }
+    return 0;
+}

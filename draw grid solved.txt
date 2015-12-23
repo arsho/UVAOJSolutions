@@ -1,0 +1,83 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        int t=1,a,b,c,d,e,i,j,k,sz,tk,to,l;
+        while(scanf("%d%d%d",&sz,&tk,&to)==3)
+        {
+                if(sz==0&&tk==0&&to==0)
+                break;
+                printf("Case %d:\n",t);
+                t++;
+                a=to*sz;
+                b=(to+1)*tk;
+        for(k=1;k<=to;k++)
+         {
+
+        for(i=1;i<=tk;i++)
+                {
+                        for(j=1;j<=a+b;j++)
+                        {
+                                printf("*");
+                        }
+                        printf("\n");
+                }
+                for(i=1;i<=sz;i++)
+                {
+                        l=1;
+                        for(l=1;l<=to;l++)
+                        {
+                        for(j=1;j<=tk;j++)
+                        {
+                                printf("*");
+                        }
+                        for(j=1;j<=sz;j++)
+                                {
+                                        printf(".");
+                                }
+                        }
+                        for(j=1;j<=tk;j++)
+                        {
+                                printf("*");
+                        }
+                        printf("\n");
+                }
+        }
+                for(i=1;i<=tk;i++)
+                {
+                        for(j=1;j<=a+b;j++)
+                        {
+                                printf("*");
+                        }
+                        printf("\n");
+                }
+        printf("\n");
+        }
+        return 0;
+}

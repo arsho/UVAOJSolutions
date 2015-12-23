@@ -1,0 +1,64 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+int main()
+
+{
+    long long n,p,a,b,c,d,e,f,g,h,i,j,k,l,o;
+    while(scanf("%lld",&n)==1)
+    {
+        p=1;
+        c=0;
+        while(p<n)
+        {
+            if(c==0)
+            {
+              
+                p*=9;
+      
+                c=1;
+               
+
+            }
+            else
+            {
+              
+                p*=2;
+            
+                c=0;
+              
+            }
+        }
+        if(c==1)
+        printf("Stan wins.\n");
+        else
+        printf("Ollie wins.\n");
+    }
+    return 0;
+}

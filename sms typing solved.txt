@@ -1,0 +1,33 @@
+#include<cstdio>
+#include<cstring>
+#include<iostream>
+using namespace std;
+#define PI 3.14159265
+
+int main()
+
+{
+   int t,a,b,c,i,j,sum;
+   char line[2000];
+   char aa;
+   scanf("%d%c",&t,&aa);
+   for(i=1;i<=t;i++)
+   {
+       sum=0;
+       gets(line);
+       b=strlen(line);
+       for(j=0;j<b;j++)
+       {
+           if((line[j]==' ')||(line[j]=='a')||(line[j]=='d')||(line[j]=='g')||(line[j]=='j')||(line[j]=='m')||(line[j]=='p')||(line[j]=='t')||(line[j]=='w'))
+           sum++;
+           else if((line[j]=='b')||(line[j]=='e')||(line[j]=='h')||(line[j]=='k')||(line[j]=='n')||(line[j]=='q')||(line[j]=='u')||(line[j]=='x'))
+           sum=sum+2;
+           else if((line[j]=='c')||(line[j]=='f')||(line[j]=='i')||(line[j]=='l')||(line[j]=='o')||(line[j]=='r')||(line[j]=='v')||(line[j]=='y'))
+           sum=sum+3;
+           else if((line[j]=='s')||(line[j]=='z'))
+           sum=sum+4;
+       }
+       printf("Case #%d: %d\n",i,sum);
+   }
+    return 0;
+}

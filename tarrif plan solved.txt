@@ -1,0 +1,43 @@
+#include<stdio.h>
+ #include<math.h>
+
+int main()
+{
+    long long int d,e,f,g,p,ju,me,a,b,c[99],i,h,j;
+    double ass,asss;
+    scanf("%lld",&a);
+    for(i=1;i<=a;i++)
+    {
+        scanf("%lld",&b);
+        ju=0;
+        me=0;
+        for(j=0;j<b;j++)
+        {
+            scanf("%lld",&c[j]);
+				g=59;
+            ju+=15;
+				while(g<c[j])
+				{
+					g+=60;
+					ju+=15;
+            }
+				g=29;
+				me+=10;
+				while(g<c[j])
+				{
+					g+=30;
+					me+=10;
+            }
+          
+        }
+       
+        if(ju==me)
+        printf("Case %lld: Mile Juice %lld\n",i,me);
+        else if(ju>me)
+        printf("Case %lld: Mile %lld\n",i,me);
+        else if(ju<me)
+        printf("Case %lld: Juice %lld\n",i,ju);
+    }
+    return 0;
+}
+

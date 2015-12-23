@@ -1,0 +1,45 @@
+
+import java.io.*;
+import java.math.*;
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+
+        Scanner sc = new Scanner(System.in);
+
+        long n, i, m, num;
+        int count;
+        while (sc.hasNext()) {
+            n = sc.nextLong();
+            if (n == 0) {
+                break;
+            }
+            m = 0;
+            count = 0;
+            num = Math.abs(n);
+            for (i = 2; i * i <= num; i++) {
+                while (n % i == 0) {
+                    if (m != i) {
+                        count++;
+                    }
+                    m = i;
+                    n /= i;
+                }
+            }
+            if (n != 1 && n != -1 && n!= num) {
+                m = Math.abs(n);
+                count++;
+            }
+            if (count > 1) {
+                System.out.println(m);
+            } else {
+                System.out.println("-1");
+            }
+        }
+
+    }
+}

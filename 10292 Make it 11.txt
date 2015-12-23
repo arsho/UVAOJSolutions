@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+        string line;
+        int len,i,sumodd,sumeven,num=11,ans,c;
+        while(cin>>line)
+        {
+                if(line=="0")
+                        break;
+                len=line.length();
+                sumodd=0,sumeven=0;
+                for(i=0;i<len;i++)
+                {
+                       c=line[i]-'0';
+                       if(i%2==0)
+                                sumodd+=c;
+                       else
+                                sumeven+=c;
+                }
+                ans=sumodd-sumeven;
+                if(ans%num==0)
+                        cout<<line<<" is a multiple of 11."<<endl;
+                else
+                        cout<<line<<" is not a multiple of 11."<<endl;
+        }
+        return 0;
+}

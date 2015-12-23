@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+double calc(double x,double y,double x1,double y1)
+{
+    double res;
+    res=((x-x1)*(x-x1))+((y-y1)*(y-y1));
+    res=sqrt(res);
+    return res;
+}
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    int cas,t;
+    double x,y,r,dis,ansa,ansb;
+    cin>>cas;
+    for(t=1; t<=cas; t++)
+    {
+        cin>>x>>y>>r;
+        dis=calc(x,y,0,0);
+        ansa=r-dis;
+        ansb=r+dis;
+        cout<<fixed<<setprecision(2)<<ansa<<" "<<fixed<<setprecision(2)<<ansb<<endl;
+    }
+    return 0;
+}
+

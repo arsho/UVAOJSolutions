@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+        int cas,i,a,b,c,d,e,f,g,h,wifeStart,wifeEnd,meetStart,meetEnd;
+        char ch;
+        cin>>cas;
+        for(i=1;i<=cas;i++)
+        {
+                cin>>a>>ch>>b>>c>>ch>>d>>e>>ch>>f>>g>>ch>>h;
+                wifeStart=a*60+b;
+                wifeEnd=c*60+d;
+                meetStart=e*60+f;
+                meetEnd=g*60+h;
+                bool check=false;
+                if((wifeStart>meetEnd)||(wifeEnd<meetStart))
+                        check=true;
+                cout<<"Case "<<i<<": ";
+                if(check==true)
+                        cout<<"Hits Meeting"<<endl;
+                else
+                        cout<<"Mrs Meeting"<<endl;
+        }
+        return 0;
+}

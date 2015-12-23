@@ -1,0 +1,31 @@
+#include<cstdio>
+using namespace std;
+long long bigmod(long long a,long long b,long long c)
+{
+    long long d;
+    if(b==0)
+    return 1;
+    if(b%2==1)
+    return ((a%c)*bigmod(a,(b-1),c)%c);
+    else
+    {
+        d=(bigmod(a,(b/2),c))%c;
+        return ((d*d)%c);
+    }
+}
+int main()
+{
+    long long a,b,c,d,i,j;
+    while(scanf("%lld",&j)==1)
+    {
+        if(j==0)
+        break;
+        for(i=1;i<=j;i++)
+        {
+        scanf("%lld%lld%lld",&a,&b,&c);
+        d=bigmod(a,b,c);
+        printf("%lld\n",d);
+        }
+    }
+    return 0;
+}

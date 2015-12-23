@@ -1,0 +1,50 @@
+
+import java.io.*;
+import java.math.*;
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+    public static int computedevisor(int a)
+    {
+        if(a==1)
+            return 1;
+        int count=0;
+        int b=(int)Math.sqrt(a);
+        for(int i=1;i<=b;i++)
+        {
+            if(a%i==0)
+                count+=2;
+        }
+        if(b*b==a)
+            count--;
+        return count;
+        
+    }
+    public static void main(String[] args) {
+
+
+        Scanner sc = new Scanner(System.in);
+        int cur, res, num=0, cas,l, h ,p,d ,u,i, j;
+        cas=sc.nextInt();
+        for(i=1;i<=cas;i++)
+        {
+            l=sc.nextInt();
+            u=sc.nextInt();
+            res=0;
+            
+            for(j=l;j<=u;j++)
+            {
+                cur=computedevisor(j);
+                if(cur>res)
+                {
+                    res=cur;
+                    num=j;
+                }
+            }
+            System.out.printf("Between %d and %d, %d has a maximum of %d divisors.\n",l,u,num,res);
+          }
+        
+    }
+}

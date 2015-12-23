@@ -1,0 +1,22 @@
+#include<cstdio>
+using namespace std;
+int main()
+{
+    int a,b[1001],d,i,e,j=1;
+    while(scanf("%d",&a)==1)
+    {
+        if(a==0)
+        break;
+        e=0;
+        for(i=0;i<a;i++)
+        {
+            scanf("%d",&b[i]);
+            if(b[i]==0)
+            e++;
+        }
+        d=(a-e)-e;
+        printf("Case %d: %d\n",j,d);
+        j++;
+    }
+    return 0;
+}

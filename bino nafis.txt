@@ -1,0 +1,25 @@
+#include<stdio.h>
+ long long int a,b,c,d,e,f,r;
+long long int fact(long long int g)
+    {
+        if (g==1 || g==0)
+        return 1;
+        else
+        return (g*fact(g-1));
+    }
+    int main()
+    {
+
+        while(scanf("%lld%lld",&a,&b)==2)
+        {
+            if(a==0 && b==0)
+            break;
+         c=a-b;
+         d=fact(c);
+         e=fact(a);
+         f=fact(b);
+         r=(e/(d*f));
+         printf("%lld\n",r);
+        }
+return 0;
+}

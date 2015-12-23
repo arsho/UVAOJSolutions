@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+    int n,a[50],b,c,d,i,h=0,l=0,j,k;
+    while(scanf("%d",&n)==1)
+    {
+        for(k=1;k<=n;k++)
+        {
+            scanf("%d",&d);
+
+            h=0;
+            l=0;
+            for(j=1;j<=d;j++)
+            {
+                scanf("%d",&a[j]);
+            }
+
+            for(i=1;i<d;i++)
+            {
+                    if(a[i]>a[i+1])
+                        h++;
+                    else if(a[i]<a[i+1])
+                       l++;
+            }
+             printf("Case %d: %d %d\n",k,l,h);
+
+        }
+
+    }
+    return 0;
+}

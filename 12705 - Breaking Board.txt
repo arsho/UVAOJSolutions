@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+        int tmp,cas,t,i,len,ans;
+        string line;
+        cin>>cas;
+        getchar();
+        int ar[37]={2,3,3,4,4,4,5,5,5,5,6,6,6,6,6,7,7,7,7,7,7,8,8,8,8,8,9,9,9,9,10,10,10,11,11,12};
+        for(t=1;t<=cas;t++)
+        {
+                int c[156];
+                int sho[156];
+                for(i=0;i<150;i++)
+                {
+                        c[i]=0;
+                        sho[i]=0;
+                }
+                getline(cin,line);
+                ans=0;
+                len=line.length();
+                for(i=0;i<len;i++)
+                {
+                        tmp=line[i];
+                        if(line[i]>='A' && line[i]<='Z')
+                        {
+                                c[tmp]+=1;
+                        }
+                        else if(line[i]>='0' && line[i]<='9')
+                        {
+                                c[tmp]+=1;
+                        }
+                }
+                int cnt=0;
+                for(i=0;i<150;i++)
+                {
+                        if(c[i]!=0)
+                        {
+                                sho[cnt]=c[i];
+                                cnt++;
+                        }
+                }
+                sort(sho,sho+cnt);
+                reverse(sho,sho+cnt);
+                ans=0;
+                for(i=0;i<cnt;i++)
+                        ans+=ar[i]*sho[i];
+                cout<<ans<<endl;
+        }
+        return 0;
+}

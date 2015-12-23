@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+        map<string,int>mp;
+        map<string,int>::iterator it;
+       queue<string>q;
+       char c;
+       for(c='a';c<='z';c++)
+       {
+               q.push(string(1,c));
+       }
+       int sol=1;
+       string tmp;
+       while(!q.empty())
+       {
+               tmp=q.front();
+               q.pop();
+               mp[tmp]=sol;
+               sol++;
+               if(tmp.length()==5)
+                continue;
+               for(c=tmp[tmp.length()-1]+1;c<='z';c++)
+                q.push(tmp+c);
+       }
+        string a;
+        while(cin>>a)
+        {
+        it=mp.find(a);
+        if(it==mp.end())
+                cout<<"0\n";
+        else
+                cout<<it->second<<"\n";
+
+        }return 0;
+}

@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+    long long int a,b,c,i;
+    scanf("%lld",&a);
+    for(i=1;i<=a;i++)
+    {
+        scanf("%lld%lld",&b,&c);
+        if(c%b==0)
+        printf("%lld %lld\n",b,c);
+        else
+        printf("-1\n");
+    }
+    return 0;
+}

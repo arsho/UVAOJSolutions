@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long double int b,p,m,n;
+    long long int k;
+    while(scanf("%Lf%Lf%Lf",&b,&p,&m)==3){
+    n=pow(b,p);
+    k=(long long int)n%m;
+    printf("%lld\n",k);}
+    return 0;
+}

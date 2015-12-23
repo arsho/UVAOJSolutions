@@ -1,0 +1,51 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        int a,e,ans[4],no,i,b,t;
+        scanf("%d",&t);
+        for(e=1;e<=t;e++)
+        {
+                scanf("%d",&a);
+                no=0;
+                b=(int)sqrt(a);
+                for(i=2;i<=b;i++)
+                {
+                        if(a%i==0)
+                        {
+                          ans[no++]=i;
+                          ans[no++]=a/i;
+                        }
+                        if(no==4)
+                        break;
+                }
+                printf("Case #%d: %d = %d * %d = %d * %d\n",e,a,ans[0],ans[1],ans[2],ans[3]);
+        }
+        return 0;
+}

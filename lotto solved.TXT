@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cmath>
+#include <cstdio>
+using namespace std;
+int main()
+{
+        int a,b,c,d,e,f,g,h,i,j,cas;
+        int num[20];
+        bool firstnewline=false;
+        while(scanf("%d",&cas)==1&&cas)
+        {
+                if(firstnewline==true)
+                printf("\n");
+                firstnewline=true;
+                for(i=0;i<cas;i++)
+                scanf("%d",&num[i]);
+                for(a=0;a<cas;a++)
+                {
+                        for(b=a+1;b<cas;b++)
+                        {
+                                for(c=b+1;c<cas;c++)
+                                {
+                                        for(d=c+1;d<cas;d++)
+                                        {
+                                                for(e=d+1;e<cas;e++)
+                                                {
+                                                        for(f=e+1;f<cas;f++)
+                                                        {
+                                                                printf("%d %d %d %d %d %d\n",num[a],num[b],num[c],num[d],num[e],num[f]);
+                                                        }
+                                                }
+                                        }
+                                }
+                        }
+                }
+
+        }
+      return 0;
+}

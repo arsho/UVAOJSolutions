@@ -1,0 +1,35 @@
+import java.io.*;
+import java.math.*;
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+   
+    public static void main(String[] args) {
+       
+        int i,a,cas;
+        BigInteger[] fib=fib(5002);
+        Scanner sc=new Scanner(System.in);
+        cas=sc.nextInt();
+        for(i=1;i<=cas;i++)
+        {
+            a=sc.nextInt();
+           System.out.println("Scenario #"+i+":");
+            System.out.println(fib[a+2]);
+            System.out.println();
+        }
+    }
+    public static BigInteger[] fib(int n)
+    {
+        BigInteger[] fib=new BigInteger[n+1]; 
+        fib[0]=BigInteger.ZERO;
+        fib[1]=BigInteger.ONE;
+        for(int i=2;i<=n;i++)
+        {
+            fib[i]=fib[i-1].add(fib[i-2]);
+        }
+        return fib;
+    }
+    
+}

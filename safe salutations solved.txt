@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+        int b,a[11]={1,2,5,14,42,132,429,1430,4862,16796},c=0;
+        while(scanf("%d",&b)==1)
+        {
+                if(c!=0)
+                {
+                        printf("\n");
+                }
+                printf("%d\n",a[b-1]);
+                c++;
+        }
+      return 0;
+}

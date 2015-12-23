@@ -1,0 +1,45 @@
+#include<stdio.h>
+int main()
+{
+    int a[5],b[5],c,d,e,f,g,h,i,j,n,count;
+    while(scanf("%d",&n)==1)
+    {
+        if(n==0)
+        break;
+        else
+        {
+        for(i=1;i<=n;i++)
+        {
+            count=0;h=0;
+            for(j=1;j<=5;j++)
+            {
+                scanf("%d",&a[j]);
+                if(a[j]<=127)
+                {
+                    count++;
+                    b[5]=j;
+                }
+                else if(a[j]>127)
+                h++;
+            }
+            if(count==1)
+            {
+                if(a[1]<=127)
+                printf("A\n");
+                else if(a[2]<=127)
+                printf("B\n");
+                else if(a[3]<=127)
+                printf("C\n");
+                else if(a[4]<=127)
+                printf("D\n");
+                else if(a[5]<=127)
+                printf("E\n");
+            }
+            else if(count>1||h==5)
+            printf("*\n");
+
+        }
+    }
+    }
+    return 0;
+}

@@ -1,0 +1,96 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+
+int main()
+{
+    int mem[100];
+    string line;
+    int cas,i,j,a,b,len,p;
+    scanf("%d",&cas);
+    getchar();
+    for(i=1; i<=cas; i++)
+    {
+        memset(mem,0,sizeof mem);
+        p=0;
+       // gets(line);
+        getline (cin, line);
+        len=line.size();
+        printf("Case %d:",i);
+        for(j=0; j<len; j++)
+        {
+            switch (line[j])
+            {
+            case '>':
+                p++;
+                if (p== 100)
+                    p= 0;
+                break;
+            case '<':
+                p--;
+                if (p == -1)
+                    p = 99;
+                break;
+            case '+':
+                mem[p]++;
+                if (mem[p] == 256)
+                    mem[p] = 0;
+                break;
+            case '-':
+                mem[p]--;
+                if (mem[p] == -1)
+                    mem[p] = 255;
+                break;
+            case '.':
+                break;
+            }
+        }
+        for(int jo=0; jo<100; jo++)
+            printf(" %02X",mem[jo]);
+            printf("\n");
+    }
+    return 0;
+}

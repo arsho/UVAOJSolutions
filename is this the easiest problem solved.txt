@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main()
+{
+long int a,b,c,d;
+int i;
+while(scanf("%ld",&a)==1)
+{
+    for(i=1;i<=a;i++)
+    {
+       scanf("%ld%ld%ld",&b,&c,&d);
+       if(b+c<=d || b+d<=c || c+d<=b)
+       
+           printf("Case %d: Invalid\n",i);
+       
+       else if(b==c && b==d)
+       
+           printf("Case %d: Equilateral\n",i);
+       
+       else if(b==c || c==d || d==b)
+       
+           printf("Case %d: Isosceles\n",i);
+       
+       else if(b!=c && c!=d && d!=b)
+       
+           printf("Case %d: Scalene\n",i);
+       
+       }
+}
+return 0;
+}

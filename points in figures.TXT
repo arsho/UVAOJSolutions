@@ -1,0 +1,83 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+
+int main()
+{
+     struct points{
+     double x1;
+     double y1;
+     double x2;
+     double y2;
+     }ar[12];
+     int a,b,c,d,e,f,g,u,i,j,count=0;
+     char ch;
+     while(scanf("%c",&ch)&&ch!='*')
+     {
+             if(ch!='r')
+             continue;
+             scanf("%lf%lf%lf%lf",&ar[count].x1,&ar[count].y1,&ar[count].x2,&ar[count].y2);
+             count++;
+     }
+     double x,y;
+     int num=1;
+     while(scanf("%lf%lf",&x,&y)&&x!=9999.9&&y!=9999.9)
+     {
+             bool check=false;
+             for(i=0;i<count;i++)
+             {
+                     if(x>ar[i].x1&&x<ar[i].x2&&y<ar[i].y1&&y>ar[i].y2)
+                     {
+                             printf("Point %d is contained in figure %d\n",num,i+1);
+                             check=true;
+                     }
+             }
+             if(check==false)
+             printf("Point %d is not contained in any figure\n",num);
+             num++;
+     }
+      return 0;
+}

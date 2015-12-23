@@ -1,0 +1,61 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        long long a,b,d,e,f,g,h,u,j,i,k;
+        char ca,last;
+        while(scanf("%c",&ca)==1)
+        {
+                while(isalpha(ca))
+                {
+                        if(ca=='a'||ca=='A'||ca=='e'||ca=='E'||ca=='i'||ca=='I'||ca=='o'||ca=='O'||ca=='u'||ca=='U')
+                        {
+                                while(isalpha(ca))
+                                {
+                                        putchar(ca);
+                                        ca=getchar();
+                                }
+                                printf("ay");
+                        }
+                        else
+                        {
+                                last=ca;
+                                ca=getchar();
+                                while(isalpha(ca))
+                                {
+                                        putchar(ca);
+                                        ca=getchar();
+                                }
+                                printf("%cay",last);
+                        }
+                }
+                putchar(ca);
+        }
+        return 0;
+}

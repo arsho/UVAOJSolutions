@@ -1,0 +1,60 @@
+import java.io.*;
+import java.lang.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc= new  Scanner(System.in);
+        BigInteger a,b,res;
+        String ch,u,v;
+        int i,j;
+        while(sc.hasNext())
+        {
+        
+            u=sc.next();
+            a=new BigInteger(u);
+            ch=sc.next();
+            v=sc.next();
+            
+            b=new BigInteger(v);
+            System.out.printf("%s %s %s\n",u,ch,v);
+            if(a.compareTo(BigInteger.valueOf(2147483647))>0)
+            {
+                System.out.println("first number too big");
+            }
+            
+            if(b.compareTo(BigInteger.valueOf(2147483647))>0)
+            {
+                System.out.println("second number too big");
+            }
+            if(ch.compareTo("+")==0)
+            {
+                res=a.add(b);
+                
+            if(res.compareTo(BigInteger.valueOf(2147483647))>0)
+            {
+                System.out.println("result too big");
+            }
+                   
+            }
+            if(ch.compareTo("*")==0)
+            {
+                res=a.multiply(b);
+                
+            if(res.compareTo(BigInteger.valueOf(2147483647))>0)
+            {
+                System.out.println("result too big");
+            }
+                   
+            }
+            
+    }
+
+    }
+}

@@ -1,0 +1,61 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+unsigned long long fib(unsigned long long n)
+{
+    unsigned long long i,a=0,b=1,c,sum=0;
+       for(i=1;i<=n;i++)
+         {
+             c = a+b;
+             a = b;
+             b = c;
+             sum+=c;
+         }
+
+    return sum;
+}
+int main()
+{
+
+    unsigned long long a,male,total,fa;
+    while(scanf("%llu",&a)==1)
+    {
+        if(a==-1)
+        break;
+        if(a==0)
+        {
+            printf("0 1\n");
+            continue;
+        }
+        male=fib(a-1)+1;
+        total=fib(a)+1;
+        printf("%llu %llu\n",male,total);
+
+    }
+    return 0;
+}

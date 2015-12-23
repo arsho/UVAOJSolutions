@@ -1,0 +1,80 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        struct
+        {
+                char s1[900];
+                char s2[900];
+        }s[900];
+        int a,b,c,d,e,f,i,j,g,v;
+        char ss[900];
+        while(scanf("%d%d",&a,&b)==2)
+        {
+                for(i=0;i<a;i++)
+                {
+                        scanf("%s%s",&s[i].s1,&s[i].s2);
+                }
+                for(j=0;j<b;j++)
+                {
+                        g=0;
+                        scanf("%s",&ss);
+                        e=strlen(ss);
+                        for(i=0;i<a;i++)
+                        {
+                                if(strcmp(s[i].s1,ss)==0)
+                                {
+                                        printf("%s\n",s[i].s2);
+                                        g++;
+                                        break;
+                                }
+                        }
+                        if(g==0)
+                        {
+                                if((ss[e-1]=='y')&&((ss[e-2]!='a')&&(ss[e-2]!='e')&&(ss[e-2]!='i')&&(ss[e-2]!='o')&&(ss[e-2]!='u')))
+                                {
+                                        v=e-1;
+                                        ss[v]='i';
+
+
+
+                                        printf("%ses\n",ss);
+                                }
+                                else if((ss[e-1]=='o')||(ss[e-1]=='s')||(ss[e-1]=='x')||(ss[e-1]=='h'&&ss[e-2]=='c')||(ss[e-1]=='h'&&ss[e-2]=='s'))
+                                {
+                                        printf("%ses\n",ss);
+                                }
+                                else
+                                printf("%ss\n",ss);
+                        }
+
+                }
+        }
+        return 0;
+}

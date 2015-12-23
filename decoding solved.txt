@@ -1,0 +1,66 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+#define PI 3.14159265
+int main()
+{
+    char x[3000],y[3000];
+int i,j,n=0,l,p,k=0,m,count=0;
+
+gets(y);
+p=atoi(y);
+
+while(p>0)
+{
+p--;
+gets(x);
+l=strlen(x);
+count++;
+printf("Case %d: ",count);
+for(i=0;i<l;i++)
+{
+j=i+1;
+if(x[j]>='0' && x[j]<='9')
+{
+n=n*10+x[j]-'0';
+k++;
+}
+else
+{
+for(m=1;m<=n;m++)
+printf("%c",x[i-k]);
+k=0;
+n=0;
+}
+
+}
+
+printf("\n");
+}
+return 0;
+}

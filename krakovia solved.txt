@@ -1,0 +1,31 @@
+
+import java.lang.*;
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       
+        Scanner sc=new Scanner(System.in);
+        int cas=0;
+        while(sc.hasNext())
+        {
+            int a=sc.nextInt();
+            int b=sc.nextInt();
+            if(a==0&&b==0)
+                break;
+            cas++;
+            BigInteger sum=BigInteger.ZERO;
+            for(int i=1;i<=a;i++)
+            {
+                BigInteger val=sc.nextBigInteger();
+                sum=sum.add(val);
+            }
+            BigInteger res=sum.divide(BigInteger.valueOf(b));
+            //Bill #1 costs 16200000000: each friend should pay 5400000000
+            System.out.println("Bill #"+cas+" costs "+sum+": each friend should pay "+res+"\n");
+        }
+    }
+}

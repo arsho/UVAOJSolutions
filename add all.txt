@@ -1,0 +1,53 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define mod 1000000000
+
+int main()
+{
+        int n,i,j,sum,total,ar[10000];
+        while(scanf("%d",&n)==1 && n)
+        {
+                for(i=0;i<n;i++)
+                        scanf("%d",&ar[i]);
+                sort(ar,ar+n);
+                sum=ar[0]+ar[1];
+                total=sum;
+                for(i=2;i<n;i++)
+                {
+                        sum+=ar[i];
+                        total+=sum;
+                }
+                printf("%d\n",total);
+        }
+      return 0;
+}

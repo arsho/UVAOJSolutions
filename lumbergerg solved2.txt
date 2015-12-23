@@ -1,0 +1,27 @@
+#include<stdio.h>
+main()
+{
+    int i,j,a[11],n,k=0,m=0;
+    scanf("%d",&n);
+    printf("Lumberjacks:\n");
+    for(i=0;i<n;i++)
+    {
+        k=0,m=0;
+        for(j=0;j<10;j++)
+        {
+            scanf("%d",&a[j]);
+        }
+        for(j=0;j<10-1;j++)
+        {
+            if(a[j]>=a[j+1])
+            k++;
+            if(a[j]<=a[j+1])
+            m++;
+        }
+        if(k==9||m==9)
+        printf("Ordered\n");
+        else
+        printf("Unordered\n");
+    }
+    return 0;
+}

@@ -1,0 +1,75 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+long long fact(long long a)
+{
+    if(a==1||a==0)
+    return 1;
+    else
+    return a*(fact(a-1));
+}
+int main()
+{
+    long long int sum,lk,m[963],g,n,count,k,j,len,b,t,a,i;
+    char as[39];
+    while(scanf("%lld",&t)==1)
+    {
+        for(i=1;i<=t;i++)
+        {
+            scanf("%s",&as);
+            len=strlen(as);
+            count=1;
+            for(g=64;g<=92;g++)
+            {
+                m[g]=0;
+            }
+            for(j=0;j<len;j++)
+            {
+                if(as[j]>='A'||as[j]<='Z')
+                {
+                    n=as[j];
+                    m[n]++;
+                }
+
+            }
+            sum=1;
+            for(lk=64;lk<=92;lk++)
+            {
+                if(m[lk]>0)
+                {
+                    sum*=fact(m[lk]);
+                }
+            }
+            b=fact(len)/sum;
+            printf("Data set %lld: %lld\n",i,b);
+        }
+    }
+
+    return 0;
+}

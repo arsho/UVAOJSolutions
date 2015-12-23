@@ -1,0 +1,43 @@
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>
+#include <cctype>
+#include <cmath>
+#include <algorithm>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <climits>
+using namespace std;
+
+long long ar[5]={1,5,10,25,50};
+int main()
+{
+    long long x,i,j,t;
+    long long dp[30003][7];
+    for(i=0;i<1;i++)
+    {
+        for(j=0;j<5;j++)
+        dp[i][j]=1;
+    }
+    for(i=1;i<=30000;i++)
+    {
+        for (j=0;j<5;j++)
+        {
+            dp[i][j]=0;
+            if(ar[j]<=i)
+            dp[i][j]+=dp[i-ar[j]][j];
+
+            if(j>0)
+            dp[i][j]+=dp[i][j-1];
+        }
+    }
+    while(scanf("%lld",&t)==1)
+    {
+        if(dp[t][4]==1)
+        printf("1\n",t);
+        else
+        printf("%lld\n",dp[t][4],t);
+    }
+    return 0;
+}

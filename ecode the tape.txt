@@ -1,0 +1,58 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>ar
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define mod 1000000000
+
+int main()
+{
+    char input[100];
+    while(gets(input))
+    {
+        int ar[10];
+        int c = 0;
+        if(input[0]=='|')
+        {
+            for(int i=1; i<strlen(input)-1; i++)
+            {
+                if(input[i]==' ')ar[c++] = 0;
+                else if(input[i]=='o')ar[c++] = 1;
+            }
+            int sum = 0;
+            for(int i=c-1; i>=0; i--)
+            {
+                sum += ar[i]*pow((double)2,c-1-i);
+            }
+            printf("%c",sum);
+        }
+    }
+    return 0;
+}

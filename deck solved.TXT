@@ -1,0 +1,60 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+#define EPS 1e-7
+int main()
+{
+   double ar[100000];
+    int a,b,c,d,e,f,g,h,i;
+    ar[0]=0;
+    ar[1]=.5;
+    for(i=2;i<100000;i++)
+        ar[i]=ar[i-1]+0.5/(double)i;
+    printf("# Cards Overhang\n");
+    while(scanf("%d",&a)==1)
+        printf("%5d%10.3f\n",a,EPS+ar[a]);
+return 0;
+}

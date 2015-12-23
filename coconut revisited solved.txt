@@ -1,0 +1,63 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+int main()
+{
+    int coc,max,found = 0,i,j,res;
+
+    while(scanf("%d", &coc)&&coc!=-1)
+    {
+        found = 0 ;
+        max = sqrt(coc) +1;
+        for(i = max ; i >= 2 ; i--)
+        {
+            res = coc;
+            for(j = 0 ; j < i && res%i ==1; j++)
+            {
+                res -= res / i + 1;
+            }
+            if(res%i==0 && j==i)
+            {
+                found = 1;
+                break;
+            }
+        }
+        if(found)
+        {
+            printf("%d coconuts, %d people and 1 monkey\n", coc,i);
+        }
+        else
+        {
+            printf("%d coconuts, no solution\n", coc);
+        }
+    }
+    return 0;
+}
+

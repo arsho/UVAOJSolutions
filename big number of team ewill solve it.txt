@@ -1,0 +1,82 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    char line[50];
+    char jud[50];
+    char ll[50];
+    int a,b,c,d,cr,i,j,k,l;
+    while(scanf("%d",&a)==1)
+    {
+        getchar();
+        for(i=1;i<=a;i++)
+        {
+
+            gets(line);
+            gets(jud);
+            b=strlen(line);
+            c=strlen(jud);
+
+            if(strcmp(line,jud)==0)
+            {
+                printf("Case %d: Yes\n",i);
+            }
+            else
+            {
+                k=0;
+                for(j=0;j<b;j++)
+                {
+
+                    if((line[j]>='a'&&line[j]<='z')||(line[j]>='A'&&line[j]<='Z'))
+                    {
+                      ll[k]=line[j];
+                      k++;
+                    }
+                }
+                ll[k]='\0';
+                cr=0;
+                for(l=0;l<c;l++)
+                {
+                    if(ll[l]!=jud[l])
+                    {
+                        cr++;
+                        break;
+                    }
+                }
+
+                if((c==k)&&(cr==0))
+                printf("Case %d: Output Format Error\n",i);
+                else
+                printf("Case %d: Wrong Answer\n",i);
+
+            }
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    double a,b,c,d,i,e=0.0;
+    while(scanf("%lf",&a)==1)
+    {
+        for(i=1;i<=a;i++)
+        {
+            scanf("%lf",&b);
+            c=c+b;
+            d=c/a;
+            if(b!=d);
+            {
+                e++;
+            }
+
+        }
+        printf("Set #%.0lf\nThe minimum number of moves is %.0lf.\n",i,e);
+    }
+
+    return 0;
+}

@@ -1,0 +1,69 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define mod 1000000000
+
+int main()
+{
+        int numMonths, numGiven,i,j,ans,m;
+        double downPay, loan, curLoan, curVal, tmp,monLoan;
+        double dep[102];
+        while(scanf("%d %lf %lf %d",&numMonths,&downPay,&loan,&numGiven)==4)
+        {
+                if(numMonths<0)
+                        break;
+                for(i=0;i<numGiven;i++)
+                {
+                        scanf("%d",&m);
+                        scanf("%lf",&tmp);
+                        for(j=m;j<101;j++)
+                        {
+                                dep[j]=tmp;
+                        }
+                }
+                ans=0;
+                monLoan=loan/numMonths;
+                curLoan=loan;
+                curVal=(loan+downPay)*(1-dep[0]);
+                while(curVal<curLoan)
+                {
+                        ans++;
+                        curLoan-=monLoan;
+                        curVal=curVal*(1-dep[ans]);
+                }
+                printf("%d month",ans);
+                if(ans!=1)
+                        printf("s");
+                printf("\n");
+        }
+      return 0;
+}

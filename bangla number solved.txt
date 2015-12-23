@@ -1,0 +1,92 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+
+int main()
+
+
+{
+    long long int num,nn,kk,lk,hk,sk,k,l,h,s,a,b,c,d,e,f,g=0,i,j,kk1,lk1,hk1,sk1,k1,l1,h1,s1;
+    while(scanf("%lld",&num)==1)
+    {
+        g++;
+        printf("%4lld.",g);
+        kk=num/100000000000000;
+        if(kk>0)
+        printf(" %lld kuti",kk);
+        lk1=num%100000000000000;
+        lk=lk1/1000000000000;
+        if(lk>0)
+        printf(" %lld lakh",lk);
+        hk1=lk1%1000000000000;
+        hk=hk1/10000000000;
+        if(hk>0)
+        printf(" %lld hajar",hk);
+        sk1=hk1%10000000000;
+        sk=sk1/1000000000;
+        if(sk>0)
+        printf(" %lld shata",sk);
+        k1=sk1%1000000000;
+        k=k1/10000000;
+        if(k>=0)
+        {
+            nn=num/1000000000;
+
+            if(k==0 && nn>0)
+            printf(" kuti");
+            else if(k>0)
+            printf(" %lld kuti",k);
+            }
+
+        l1=k1%10000000;
+        l=l1/100000;
+        if(l>0)
+        printf(" %lld lakh",l);
+
+        h1=l1%100000;
+        h=h1/1000;
+        if(h>0)
+        printf(" %lld hajar",h);
+
+        s1=h1%1000;
+        s=s1/100;
+        if(s>0)
+        printf(" %lld shata",s);
+
+        a=s1%100;
+      
+        if(a>0)
+        printf(" %lld",a);
+        if(num==0)
+        printf(" 0");
+        printf("\n");
+
+    }
+    return 0;
+}

@@ -1,0 +1,76 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define mod 1000000000
+
+int main()
+{
+    int cas,n,t,i,j,k;
+    int ban=0,www=0,aban=0,tie=0,tmpban,tmpwww;
+    while(cin>>cas)
+    {
+        for(t=1; t<=cas; t++)
+        {
+            cin>>n;
+            string match;
+            cin>>match;
+            ban=0,www=0,aban=0,tie=0;
+            for(i=0; i<n; i++)
+            {
+                if(match[i]=='B')
+                    ban++;
+                else if(match[i]=='W')
+                    www++;
+                else if(match[i]=='T')
+                    tie++;
+                else if(match[i]=='A')
+                    aban++;
+            }
+            tmpban=ban+aban;
+            tmpwww=www+aban;
+            cout<<"Case "<<t<<": ";
+            if(aban==n)
+                cout<<"ABANDONED"<<endl;
+            else if(tmpban==n)
+                cout<<"BANGLAWASH"<<endl;
+            else if(tmpwww==n)
+                cout<<"WHITEWASH"<<endl;
+            else if(ban==www)
+                cout<<"DRAW "<<ban<<" "<<tie<<endl;
+            else if(ban>www)
+                cout<<"BANGLADESH "<<ban<<" - "<<www<<endl;
+            else if(ban<www)
+                cout<<"WWW "<<www<<" - "<<ban<<endl;
+        }
+    }
+    return 0;
+}

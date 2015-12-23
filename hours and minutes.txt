@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+    int a,c;
+    while(cin>>a)
+    {
+            double b=a/6.0;
+            c=floor(b);
+            if(b==c)
+                cout<<"Y\n";
+            else
+                cout<<"N\n";
+    }
+    return 0;
+}

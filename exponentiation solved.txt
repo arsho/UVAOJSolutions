@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+import java.math.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner scan = new Scanner(System.in);
+		
+		while(scan.hasNext())
+		{
+			BigDecimal a = scan.nextBigDecimal();
+			
+			int b = scan.nextInt();
+			
+                        a=a.pow(b);
+			String out=a.stripTrailingZeros().toPlainString();
+
+            if(out.charAt(0)=='0')
+
+                out=out.substring(1,out.length());
+
+            System.out.println(out);
+
+                }
+    }
+}

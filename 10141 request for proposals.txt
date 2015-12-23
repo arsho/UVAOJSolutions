@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+    int n,p,t,i,j,tmp,cas=1;
+    while(cin>>n>>p)
+    {
+        double r,tempr;
+        string s;
+        string name;
+        int met;
+        if(n==0 && p==0)
+            break;
+        for(i=0; i<=n; i++)
+        {
+            getline(cin,s);
+        }
+        string ans;
+        int maxmet=0;
+        tempr=8000000000;
+        for(j=0; j<p; j++)
+        {
+            getline(cin,name);
+            cin>>r;
+            cin>>met;
+            if(met>maxmet)
+            {
+                ans=name;
+                maxmet=met;
+                tempr=r;
+            }
+            else if(met==maxmet && r<tempr)
+            {
+                ans=name;
+                tempr=r;
+            }
+            for(i=0; i<=met; i++)
+            {
+                getline(cin,s);
+            }
+        }
+        if(cas>1)
+            cout<<endl;
+        cout<<"RFP #"<<cas<<endl;
+        cout<<ans<<endl;
+        cas++;
+    }
+    return 0;
+}

@@ -1,0 +1,52 @@
+
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        String line1, line2;
+        BigInteger a, b;
+        int i, j;
+        while (sc.hasNext()) {
+            boolean res = false;
+            line1 = sc.next();
+            line2 = sc.next();
+            for (i = 2; i <= 36; i++) {
+                try {
+                    a = new BigInteger(line1, i);
+
+                } catch (Exception e) {
+                    continue;
+                }
+
+                for (j = 2; j <= 36; j++) {
+                    try {
+                        b = new BigInteger(line2, j);
+                    } catch (Exception e) {
+                        continue;
+                    }
+
+                    if (a.compareTo(b) == 0) {
+                        res = true;
+                        System.out.println(line1 + " (base " + i + ") = " + line2 + " (base " + j + ")");
+                        break;
+                    }
+                }
+                if (res == true) {
+                    break;
+                }
+
+
+            }
+            if(res==false)
+            {
+                System.out.println(line1+" is not equal to "+line2+" in any base 2..36");
+            }
+        }
+    }
+}

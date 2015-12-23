@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<math.h>
+int gcd(int a, int b)
+{
+if(b==0)
+return a;
+else
+return gcd(b,a%b);
+}
+int main()
+{
+
+int cas, i,j, a,b,d,e,f,g,h,num[7000],sho;
+double ans, c, count;
+while(scanf("%d",&cas)==1)
+{
+count=0,c=0;
+if(cas==0)
+break;
+for(i=0;i<cas;i++)
+{
+scanf("%d",&num[i]);
+}
+for(i=0;i<cas-1;i++)
+{
+for(j=i+1;j<cas;j++)
+{
+sho=gcd(num[i],num[j]);
+c++;
+if(sho==1)
+count++;
+}
+}
+
+ans=sqrt((6*c)/(count));
+if(count==0)
+printf("No estimate for this data set.\n");
+else
+printf("%.6lf\n",ans);
+}
+return 0;
+}

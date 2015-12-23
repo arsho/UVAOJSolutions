@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+    int y1,y2,i,cas,t,dif,w,res;
+    cin>>cas;
+    for(t=1; t<=cas; t++)
+    {
+        cin>>w;
+        bool check=true;
+        cin>>y1>>y2;
+        res=abs(y1-y2);
+     //       cout<<"\ndif: "<<res<<endl;
+        for(i=1; i<w; i++)
+        {
+            cin>>y1>>y2;
+            dif=abs(y1-y2);
+ //           cout<<"\ndif: "<<dif<<endl;
+            if(dif!=res)
+                check=false;
+        }
+        if(t>1)
+                cout<<"\n";
+        if(check==true)
+            cout<<"yes"<<endl;
+        else
+            cout<<"no"<<endl;
+    }
+    return 0;
+}

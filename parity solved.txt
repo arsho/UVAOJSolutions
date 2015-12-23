@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    long long int a,i,j,k,bo,b[60],x,d;
+    while(scanf("%lld",&i)==1)
+    {
+        if(i==0)
+        break;
+        printf("The parity of ");
+        a=i;
+        bo=0,d=0;
+        while(a>0)
+        {
+            b[d]=a%2;
+            d++;
+            a=(a-a%2)/2;
+        }
+        for(x=d-1;x>=0;x--)
+        {
+            printf("%lld",b[x]);
+            if(b[x]==1)
+            bo++;
+        }
+        printf(" is %lld (mod 2).\n",bo);
+    }
+    return 0;
+}

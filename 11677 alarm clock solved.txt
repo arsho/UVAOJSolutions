@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+    int a,b,c,d,e,f,g;
+    while(scanf("%d%d%d%d",&a,&b,&c,&d)==4)
+    {
+        if(a==0&&b==0&&c==0&&d==0)
+        break;
+        else
+        {e=(a*60)+b;
+        f=(c*60)+d;
+        g=(24*60);
+        if(e>f)
+        printf("%d\n",(f+g)-e);
+        else
+        printf("%d\n",f-e);}
+    }
+    return 0;
+}

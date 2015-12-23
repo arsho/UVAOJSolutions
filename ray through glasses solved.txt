@@ -1,0 +1,33 @@
+import java.io.*;
+import java.math.*;
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+   
+    public static void main(String[] args) {
+       
+        int i,a;
+        BigInteger[] fib=fib(1002);
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext())
+        {
+            a=sc.nextInt();
+           
+            System.out.println(fib[a+2]);
+        }
+    }
+    public static BigInteger[] fib(int n)
+    {
+        BigInteger[] fib=new BigInteger[n+1]; 
+        fib[0]=BigInteger.ZERO;
+        fib[1]=BigInteger.ONE;
+        for(int i=2;i<=n;i++)
+        {
+            fib[i]=fib[i-1].add(fib[i-2]);
+        }
+        return fib;
+    }
+    
+}

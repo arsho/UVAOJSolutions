@@ -1,0 +1,57 @@
+//code number
+
+//code number
+
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+int main()
+{
+    char a[900],m[]="OIZEASGTBP";
+    int b,c,d,i;
+    scanf("%d",&b);
+    getchar();
+
+        while(gets(a))
+        {
+            c=strlen(a);
+            if(c==0)
+            {
+                printf("\n");
+            }
+            for(i=0;i<c;i++)
+            {
+                if(a[i]>='0' && a[i]<='9')printf("%c",m[a[i]-'0']);
+                else printf("%c",a[i]);
+            }
+            if(c!=0)printf("\n");
+        }
+
+    return 0;
+}

@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+    long int a,b,c,d,e,f,g,h,i,j,k,p=1,term;
+    while(scanf("%ld%ld",&a,&b)==2)
+    {
+       term=1;
+        d=a;
+        e=b;
+        if(a<0&&b<0)
+        break;
+        else
+        {
+            while(a>1)
+            {
+        if(a%2==0)
+                a=a/2;
+                else if(a%2!=0)
+                {
+                    a=a*3+1;
+                }
+                if(a>b)
+                break;
+                term++;
+            }
+            printf("Case %ld: A = %ld, limit = %ld, number of terms = %ld\n",p,d,b,term);
+
+        }
+        p++;
+    }
+    return 0;
+}

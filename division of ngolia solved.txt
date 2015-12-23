@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a,b,c,d,e,f,g,h,i,j;
+    while(scanf("%d",&a)==1)
+    {
+    if(a==0)
+    break;
+    else
+    {
+        scanf("%d%d",&b,&c);
+        for(i=1;i<=a;i++)
+        {
+            scanf("%d%d",&d,&e);
+            if((d==b)||(e==c))
+            printf("divisa\n");
+            if((d>b)&&(e>c))
+            printf("NE\n");
+            if((d<b)&&(e>c))
+            printf("NO\n");
+            if((d>b)&&(e<c))
+            printf("SE\n");
+            if((d<b)&&(e<c))
+            printf("SO\n");
+        }
+    }
+    }
+    return 0;
+}

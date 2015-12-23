@@ -1,0 +1,44 @@
+
+import java.math.BigInteger;
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int i, a, m;
+        Scanner sc = new Scanner(System.in);
+        while (sc.hasNext()) {
+            int[] num = new int[10];
+            for(int u=0;u<10;u++)
+            {
+                num[u]=0;
+            }
+            i = sc.nextInt();
+            if(i==0)
+                break;
+            BigInteger n = BigInteger.ONE;
+            for (a = 1; a <= i; a++) {
+                n = n.multiply(BigInteger.valueOf(a));
+            }
+            String line;
+            line = n.toString();
+            
+            for (int j = 0; j < line.length() ; j++) {
+
+                num[line.charAt(j) - '0']++;
+
+            }
+              /*System.out.println("0="+num[0]);
+              
+              System.out.println("1="+num[1]);
+              
+              
+              System.out.println("2="+num[2]);*/
+           System.out.println(i+"! --");
+           System.out.println("   (0)    "+num[0]+"    (1)    "+num[1]+"    (2)    "+num[2]+"    (3)    "+num[3]+"    (4)    "+num[4]);
+           System.out.println("   (5)    "+num[5]+"    (6)    "+num[6]+"    (7)    "+num[7]+"    (8)    "+num[8]+"    (9)    "+num[9]);
+        }
+    }
+}

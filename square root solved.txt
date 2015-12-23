@@ -1,0 +1,40 @@
+import java.io.*;
+import java.math.*;
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+   public static BigInteger res(BigInteger s)
+   {
+       BigInteger a,b=s;
+       BigInteger two=BigInteger.valueOf(2);
+       do
+       {
+           a=b;
+           b=a.add(s.divide(a)).divide(two);  //b=(a+(s/a))/2;
+       }
+       while(a.compareTo(b)!=0);
+       return b;
+       
+   }
+    public static void main(String[] args) {
+       
+        int cas,i,a,gap=0;
+        
+        Scanner sc=new Scanner(System.in);
+           cas=sc.nextInt();
+           for(i=1;i<=cas;i++)
+           {
+               if(gap!=0)
+                   System.out.println();
+               BigInteger sholove,shody;
+               shody=sc.nextBigInteger();
+               sholove=res(shody);
+           System.out.println(sholove);
+           gap++;
+           }
+        }
+    
+   
+}

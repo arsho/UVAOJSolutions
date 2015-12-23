@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+#include<cstdio>
+#include<cmath>
+using namespace std;
+#define eps 1e-9
+main()
+{
+        int cas,i,j,in,d;
+        double res;
+        scanf("%d",&cas);
+        for(i=1;i<=cas;i++)
+        {
+                scanf("%d",&d);
+                in=(int)ceil(d*log10(2.0));
+                res=pow(2,in/log10(2.0)-d)+eps;
+                printf("2^-%d = %.3lfE-%d\n",d,res,in);
+        }
+}

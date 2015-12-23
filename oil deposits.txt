@@ -1,0 +1,55 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool vis[105][105];
+char c[105][105];
+int m,n;
+void dfs(int i,int j)
+{
+        if(i<0 || j<0 || i>=m|| j>=n || vis[i][j]==true || c[i][j]=='*')
+                return;
+        vis[i][j]=true;
+        dfs(i-1,j-1);
+        dfs(i,j-1);
+        dfs(i+1,j-1);
+        dfs(i-1,j);
+        dfs(i+1,j);
+        dfs(i-1,j+1);
+        dfs(i,j+1);
+        dfs(i+1,j+1);
+}
+main()
+{
+        ios_base::sync_with_stdio(0);
+        cin.tie(0);
+        int i,j,k;
+        while(cin>>m>>n &&m)
+        {
+                for(i=0;i<105;i++)
+                {
+                        for(j=0;j<105;j++)
+                                {
+                                        c[i][j]='*';
+                                        vis[i][j]=false;
+                                }
+                }
+                for(i=0;i<m;i++)
+                {
+                        for(j=0;j<n;j++)
+                                cin>>c[i][j];
+                }
+                int ans=0;
+                for(i=0;i<m;i++)
+                {
+                        for(j=0;j<n;j++)
+                        {
+                                if(c[i][j]=='@' &&vis[i][j]==false)
+                                {
+                                        ans++;
+                                        dfs(i,j);
+                                }
+                        }
+                }
+                cout<<ans<<endl;
+        }
+        return 0;
+}

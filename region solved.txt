@@ -1,0 +1,52 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+int main()
+{
+    double s,r1,r2,r3,a,b,c,ar1,ar2,ar3,ans,area;
+    int cas,i;
+    scanf("%d",&cas);
+    for(i=1;i<=cas;i++)
+    {
+            scanf("%lf%lf%lf",&r1,&r2,&r3);
+            a=r2+r3;
+            b=r1+r3;
+            c=r1+r2;
+            ar1=acos((b*b+c*c-a*a)/(2*b*c));
+            ar2=acos((a*a+c*c-b*b)/(2*a*c));
+            ar3=acos((a*a+b*b-c*c)/(2*a*b));
+            s=(a+b+c)/2.0;
+            area=sqrt(s*(s-a)*(s-b)*(s-c));
+            ans=area-((ar1*r1*r1/2.0)+(ar2*r2*r2/2.0)+(ar3*r3*r3/2.0));
+            printf("%.6lf\n",ans);
+    }
+    return 0;
+}
+

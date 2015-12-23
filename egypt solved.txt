@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a,b,c,i,j;
+    long long int m,n,v,q,w,e;
+    while(scanf("%d%d%d",&a,&b,&c)==3)
+    {
+        if(a==0&&b==0&&c==0)
+        break;
+        else if(a<=0||b<=0||c<=0)
+        printf("wrong\n");
+        else
+        {
+            n=pow(c,2);
+            m=a*a+b*b;
+            v=pow(a,2);
+            q=c*c+b*b;
+            w=pow(b,2);
+            e=a*a+c*c;
+            
+            if(m==n||v==q||w==e)
+            printf("right\n");
+            else
+            printf("wrong\n");
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,41 @@
+import java.io.*;
+import java.math.*;
+import java.lang.*;
+import java.util.*;
+
+public class Main {
+
+   
+    public static void main(String[] args) {
+       
+        int shovon=0,i,a;
+        BigInteger[] fib=fib(602);
+        Scanner sc=new Scanner(System.in);
+        
+           while(sc.hasNext())
+           {
+               a=sc.nextInt();
+            BigInteger b,c,d,e,f;
+           b=fib[a*2];
+           d=fib[a+1];
+           f=b.divide(d);
+           if(a==0)
+               break;
+           System.out.println(f);
+           shovon++;
+           }
+        }
+    
+    public static BigInteger[] fib(int n)
+    {
+        BigInteger[] fib=new BigInteger[n+1]; 
+        fib[0]=BigInteger.ZERO;
+        fib[1]=BigInteger.ONE;
+        for(int i=2;i<=n;i++)
+        {
+            fib[i]=fib[i-1].multiply(BigInteger.valueOf(i));
+        }
+        return fib;
+    }
+    
+}

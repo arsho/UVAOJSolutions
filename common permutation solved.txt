@@ -1,0 +1,62 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    long long letter[30],a,b,c,d,e,f,g,h,i,j,k,l;
+    char line1[1020], line2[1020];
+    while(gets(line1))
+    {
+        gets(line2);
+        for(i=0;i<26;i++)
+        {
+            letter[i]=0;
+        }
+        a=strlen(line1);
+        sort(line1,line1+a);
+
+        b=strlen(line2);
+        sort(line2,line2+b);
+
+        for(j=0;j<a;j++)
+        {
+            letter[(line1[j]-97)]++;
+        }
+        for(k=0;k<b;k++)
+        {
+            if(letter[(line2[k]-97)]!=0)
+            {
+                printf("%c",line2[k]);
+                letter[(line2[k]-97)]--;
+
+            }
+        }
+        printf("\n");
+    }
+    return 0;
+}

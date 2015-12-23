@@ -1,0 +1,66 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    long long dif1,dif2,t,n,r,a,b,c,d,e,f,i,j;
+
+    while(scanf("%lld",&t)==1)
+    {
+        for(i=1;i<=t;i++)
+        {
+            scanf("%lld",&a);
+            scanf("%lld",&n);
+            for(j=1;j<=a;j++)
+            {
+                scanf("%lld%lld%lld%lld",&c,&d,&e,&f);
+
+                if((c<1||c>n)||(d<1||d>n)||(e<1||e>n)||(f<1||f>n))
+                {
+                    printf("no move\n");
+
+                    continue;
+                }
+                dif1=abs(c-e);
+                dif2=abs(d-f);
+                if(c==e&&d==f)
+                printf("0\n");
+                else if(dif1==dif2)
+                printf("1\n");
+                else if((dif1%2==0)&&(dif2%2==0))
+                printf("2\n");
+                else if((dif1%2==1)&&(dif2%2==1))
+                printf("2\n");
+                else
+                printf("no move\n");
+            }
+
+        }
+    }
+    return 0;
+}

@@ -1,0 +1,33 @@
+#include<stdio.h>
+long long int s(long long int a)
+{
+    long long int b,sum=0;
+    while(a>0)
+    {
+        b=a%10;
+        sum+=b;
+        a=a/10;
+    }
+    while(sum>=10)
+    {
+        sum=s(sum);
+    }
+    return sum;
+}
+int main()
+{
+    long long int g,h;
+    while(scanf("%lld",&g)==1)
+    {
+    if(g==0)
+    {
+    break;
+    }
+    else
+    {
+    h=s(g);
+    printf("%lld\n",h);
+    }
+    }
+    return 0;
+}

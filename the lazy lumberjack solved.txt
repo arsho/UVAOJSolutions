@@ -1,0 +1,23 @@
+#include<cstdio>
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    int a,b[3],f,c,d,e,j,i;
+    scanf("%d",&a);
+    for(j=0;j<a;j++)
+    {
+        for(i=0;i<3;i++){
+        scanf("%d",&b[i]);}
+        c=b[0]>b[1]?b[0]:b[1];
+        d=b[0]<b[1]?b[0]:b[1];
+        e=c>b[2]?c:b[2];
+        f=c<b[2]?c:b[2];
+        if((d+f)>e)
+        printf("OK\n");
+        else
+        printf("Wrong!!\n");
+    }
+    return 0;
+}

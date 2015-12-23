@@ -1,0 +1,71 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+int main()
+
+{
+    double price;
+    long int i,len,a,b,c,d[200],e,f,g,h,j,js;
+    char line[9999],gh[200];
+    while(scanf("%ld",&a)==1)
+    {
+
+    for(e=1;e<=a;e++)
+    {
+        price=0;
+        scanf("%ld",&b);
+        getchar();
+        for(g=1;g<=b;g++)
+        {
+            scanf("%c",&gh[g]);
+            scanf("%ld",&d[g]);
+            getchar();
+        }
+        scanf("%ld",&f);
+        getchar();
+        for(j=1;j<=f;j++)
+        {
+            gets(line);
+            len=strlen(line);
+            for(g=1;g<=b;g++)
+            {
+                    for(js=0;js<len;js++)
+                    {
+                        if(gh[g]==line[js])
+                        price+=(double)d[g];
+                    }
+
+
+            }
+        }
+        printf("%.2lf$\n",price/100);
+    }
+}
+    return 0;
+}

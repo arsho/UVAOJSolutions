@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+long int im,p,i,x;
+while(scanf("%ld",&im)==1)
+{
+if(im==0) break;
+for(i=0;i<=19;i++)
+{
+p=(long)pow(2,i);
+if(im<=p)break;
+}
+x=p-(p-im)*2;
+printf("%ld\n",x);
+}
+return 0;
+}

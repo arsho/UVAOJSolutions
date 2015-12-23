@@ -1,0 +1,68 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+int main()
+{
+    int test,h,m,i,hh,mm;
+    char ch;
+    scanf("%d",&test);
+    for(i=1;i<=test;i++)
+    {
+        scanf("%d%c%d",&h,&ch,&m);
+        hh=11-h;
+if(m!=0)
+        mm=60-m;
+ if(m==0)
+        mm=m;
+if(hh==-1 && m==0)
+        hh=12;
+        else if(hh==-1 && m!=0)
+        {
+          hh=11;
+        }
+
+else if(hh==0 && m==0)
+        {
+          hh=1;
+        }
+else if(hh==0 && m!=0)
+        {
+          hh=12;
+        }
+
+        else if(hh!=-1 && m==0)
+        {
+          hh=hh+1;
+        }
+
+
+        printf("%02d:%02d\n",hh,mm);
+    }
+    return 0;
+}

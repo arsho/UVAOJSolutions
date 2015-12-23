@@ -1,0 +1,50 @@
+
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args)
+    {
+
+        Scanner sc = new Scanner(System.in);
+        String a, b,c;
+        char nn;
+        int count2,d, e, i, cas, count, k;
+        cas = sc.nextInt();
+        for (i = 1; i <= cas; i++) {
+            a = sc.next();
+            count = 0;
+            long num = Long.parseLong(a, 10);
+            b = Long.toString(num, 2);
+            for (int j = 0; j < b.length(); j++)
+            {
+                if (b.charAt(j) == '1') 
+                {
+                    count++;
+                }
+            }
+            count2=0;
+            for (int j = 0; j < a.length(); j++)
+            {
+                nn=a.charAt(j);
+                long fuck=nn-'0';
+                c = Long.toBinaryString(fuck);
+                for(k=0;k<c.length();k++)
+                {
+                     if (c.charAt(k) == '1') 
+                     {
+                    count2++;
+                }
+                
+                }
+            }
+            
+            System.out.printf("%d %d\n",count,count2);
+            
+        }
+    }
+    }
+

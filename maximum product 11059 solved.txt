@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+long long int max,pro;
+int kase=1,n,num[20],i,j;
+while(scanf("%d",&n)==1)
+{
+for(i=0;i<n;i++)
+scanf("%d",&num[i]);
+for(i=0,max=0;i<n;i++)
+{
+for(j=i,pro=1;j<n;j++)
+{
+pro*=num[j];
+if(pro>max)
+max=pro;
+}
+}
+printf("Case #%d: The maximum product is %lld.\n\n",kase,max);
+kase++;
+}
+return 0;
+}

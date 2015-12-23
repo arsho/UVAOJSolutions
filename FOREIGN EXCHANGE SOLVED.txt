@@ -1,0 +1,60 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+
+int ar[500005],ar2[500005];
+int main()
+{
+        int a,b,c,d,e,f,g,h,i,j,cas=0;
+
+        while(scanf("%d",&a)==1)
+        {
+                if(a==0)
+                break;
+                for(i=0;i<a;i++)
+                scanf("%d%d",&ar[i],&ar2[i]);
+                sort(ar,ar+a);
+                sort(ar2,ar2+a);
+                int x=0;
+                for(i=0;i<a;i++)
+                {
+                        if(ar[i]!=ar2[i])
+                        {
+                                x++;
+                                break;
+                        }
+                }
+                if(x==0)
+                printf("YES\n");
+                else
+                printf("NO\n");
+        }
+      return 0;
+}

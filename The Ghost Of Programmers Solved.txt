@@ -1,0 +1,125 @@
+
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+        GregorianCalendar gcal=new GregorianCalendar(); 
+
+        Scanner sc = new Scanner(System.in);
+        int shody=0;
+        while(sc.hasNext())
+        {
+            BigInteger a=sc.nextBigInteger();
+            if(a.compareTo(BigInteger.ZERO)==0)
+            {
+                break;
+            }
+            if(shody!=0)
+                System.out.println();
+            shody++;
+            BigInteger ta=BigInteger.valueOf(2);
+            
+            BigInteger sm=BigInteger.valueOf(5);
+            
+            BigInteger ak=BigInteger.valueOf(7);
+            
+            BigInteger am=BigInteger.valueOf(11);
+            
+            BigInteger dk=BigInteger.valueOf(15);
+            
+            BigInteger ra=BigInteger.valueOf(20);
+            
+            BigInteger jm=BigInteger.valueOf(28);
+            
+            BigInteger mh=BigInteger.valueOf(36);
+            
+            BigInteger z=BigInteger.ZERO;
+            int x=0;
+            System.out.println(a);
+            
+             BigInteger m4=a.mod(BigInteger.valueOf(4));
+             BigInteger m100=a.mod(BigInteger.valueOf(100));
+             BigInteger m400=a.mod(BigInteger.valueOf(400));
+            a=a.subtract(BigInteger.valueOf(2148));
+            if(a.compareTo(BigInteger.ZERO)<0)
+            {
+                System.out.println("No ghost will come in this year");
+                
+         
+                continue;
+            }
+            if(a.mod(ta).compareTo(z)==0)
+            {
+                
+                x++;
+                System.out.println("Ghost of Tanveer Ahsan!!!");
+            }
+            
+            if(a.mod(sm).compareTo(z)==0)
+            {
+                
+                x++;
+                System.out.println("Ghost of Shahriar Manzoor!!!");
+            }
+            
+            if(a.mod(ak).compareTo(z)==0)
+            {
+                
+                x++;
+                System.out.println("Ghost of Adrian Kugel!!!");
+            }
+            if(a.mod(am).compareTo(z)==0)
+            {
+                
+                x++;
+                System.out.println("Ghost of Anton Maydell!!!");
+            }
+            if(a.mod(dk).compareTo(z)==0)
+            {
+                
+                x++;
+                System.out.println("Ghost of Derek Kisman!!!");
+            }
+            if(a.mod(ra).compareTo(z)==0)
+            {
+                
+                x++;
+                System.out.println("Ghost of Rezaul Alam Chowdhury!!!");
+            }
+            if(a.mod(jm).compareTo(z)==0)
+            {
+                
+                x++;
+                System.out.println("Ghost of Jimmy Mardell!!!");
+            }
+            if(a.mod(mh).compareTo(z)==0)
+            {
+                
+                x++;
+                System.out.println("Ghost of Monirul Hasan!!!");
+            } 
+            
+           
+            
+            if (((m4.compareTo(BigInteger.ZERO)==0)&&(m100.compareTo(BigInteger.ZERO)!=0))||(m400.compareTo(BigInteger.ZERO)==0))
+            {
+                x++;
+                    System.out.println("Ghost of K. M. Iftekhar!!!");
+            
+            }
+         if(x==0)
+         {
+             System.out.println("No ghost will come in this year");
+         }
+         
+        }
+        
+    }
+}
+

@@ -1,0 +1,36 @@
+#include<cstdio>
+#include<algorithm>
+#include<iostream>
+#include<cmath>
+#include<cstdlib>
+
+using namespace std;
+
+int main()
+{
+        int cas,i,j;
+        double sum,mon,res;
+        scanf("%d",&cas);
+
+        for(i=1;i<=cas;i++)
+        {
+                sum=0;
+                for(j=1;j<=12;j++)
+                {
+                        scanf("%lf",&mon);
+                        sum+=mon;
+                }
+                res=sum/12.00;
+                if(res>=1000)
+                {
+                        long long full=res/1000;
+                        double point=fmod(res,1000.0);
+                     printf("%d $%lld,%.2lf\n",i,full,point);
+                }
+                else
+                printf("%d $%.2lf\n",i,res);
+
+        }
+
+      return 0;
+}

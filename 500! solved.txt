@@ -1,0 +1,23 @@
+import java.math.BigInteger;
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+   
+    public static void main(String[] args) {
+       int i,a;
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext())
+        {
+            i=sc.nextInt();
+        BigInteger n=BigInteger.ONE;
+        for(a=1;a<=i;a++)
+        {
+            n=n.multiply(BigInteger.valueOf(a));
+        }
+        System.out.println(i+"!\n"+n);
+    }
+    }
+}

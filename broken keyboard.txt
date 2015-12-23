@@ -1,0 +1,62 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define mod 1000000000
+
+int main()
+{
+    list<char>v;
+    list<char>::iterator it = v.begin();
+    int a,b,c,i,j,k,len;
+    string line;
+    while(getline(cin,line))
+    {
+
+        len=line.length();
+        for(i=0; i<len;i++)
+        {
+            if(line[i]=='[')
+           it=v.begin();
+            else if(line[i]==']')
+            it=v.end();
+            else
+                v.insert(it,line[i]);
+            }
+            for(it=v.begin();it!=v.end();it++)
+            {
+                    cout<<*it;
+            }
+            cout<<endl;
+            v.clear();
+    }
+    return 0;
+}

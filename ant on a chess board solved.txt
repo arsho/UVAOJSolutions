@@ -1,0 +1,67 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+
+int main()
+{
+    long long a,timeleft,sq;
+    double sq1;
+    while(scanf("%lld",&a)==1)
+    {
+        if(a==0)
+        break;
+        sq1=floor(sqrt(a));
+        sq=sq1;
+        timeleft=a-(sq*sq);
+        if(sq%2==0)
+        {
+            if(timeleft==0)
+            printf("%lld 1\n",sq);
+            else if(timeleft<=(sq+1))
+            {
+                printf("%lld %lld\n",(sq+1),timeleft);
+            }
+            else
+            printf("%lld %lld\n",((2*sq)+2-timeleft),(sq+1));
+        }
+        else
+        {
+            if(timeleft==0)
+            printf("1 %lld\n",sq);
+
+          else if(timeleft<=(sq+1))
+            {
+                printf("%lld %lld\n",timeleft,(sq+1));
+            }
+            else
+            printf("%lld %lld\n",(sq+1),((2*sq)+2-timeleft));
+        }
+
+    }
+    return 0;
+}

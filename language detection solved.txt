@@ -1,0 +1,57 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+#define PI 3.14159265
+
+int main()
+{
+    char line[5000];
+    long a=0,b,c,d,e,f,g,i,j;
+    while(gets(line))
+    {
+        a++;
+        b=strlen(line);
+        if((b==1)&&(line[0]=='#'))
+        break;
+        if(strcmp(line,"HELLO")==0)
+        printf("Case %ld: ENGLISH\n",a);
+        else if(strcmp(line,"HOLA")==0)
+        printf("Case %ld: SPANISH\n",a);
+        else if(strcmp(line,"HALLO")==0)
+        printf("Case %ld: GERMAN\n",a);
+        else if(strcmp(line,"BONJOUR")==0)
+        printf("Case %ld: FRENCH\n",a);
+        else if(strcmp(line,"CIAO")==0)
+        printf("Case %ld: ITALIAN\n",a);
+        else if(strcmp(line,"ZDRAVSTVUJTE")==0)
+        printf("Case %ld: RUSSIAN\n",a);
+        else
+        printf("Case %ld: UNKNOWN\n",a);
+    }
+    return 0;
+}

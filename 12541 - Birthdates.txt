@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+struct per
+{
+    string name;
+    int d;
+    int m;
+    int y;
+} sho[500];
+bool operator<(per a,per b)
+{
+        if(a.y<b.y)
+                return true;
+        else if((a.y==b.y)&&(a.m<b.m))
+                return true;
+        else if((a.y==b.y)&&(a.m==b.m)&&(a.d<b.d))
+                return true;
+        else if((a.y==b.y)&&(a.m==b.m)&&(a.d==b.d))
+                return true;
+        return false;
+}
+main()
+{
+    int cas,t;
+    cin>>cas;
+    for(t=0; t<cas; t++)
+    {
+        cin>>sho[t].name>>sho[t].d>>sho[t].m>>sho[t].y;
+    }
+    sort(sho,sho+cas);
+    cout<<sho[cas-1].name<<endl<<sho[0].name<<endl;
+    return 0;
+}

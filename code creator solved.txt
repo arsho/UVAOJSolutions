@@ -1,0 +1,64 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+
+int main()
+{
+    char line[120][102];
+    int cas,i,j,a,b,len,x=0;
+    while(scanf("%d",&cas)==1)
+    {
+            getchar();
+        if(cas==0)
+            break;
+        x++;
+        for(i=1; i<=cas; i++)
+        {
+            gets(line[i]);
+        }
+        printf("Case %d:\n",x);
+        printf("#include<string.h>\n#include<stdio.h>\nint main()\n{\n");
+        for(i=1; i<=cas; i++)
+        {
+                 printf("printf(\"");
+            len=strlen(line[i]);
+            for(j=0; j<len; j++)
+            {
+                if(line[i][j]=='"'||line[i][j]=='\\')
+                    printf("\\");
+                printf("%c",line[i][j]);
+            }
+            printf("\\n\");\n");
+        }
+        printf("printf(\"\\n\");\nreturn 0;\n}\n");
+
+    }
+    return 0;
+}

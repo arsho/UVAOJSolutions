@@ -1,0 +1,62 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+long long s(long long a)
+{
+    long long m,b,i,k,j;
+    b=a;
+    j=0;
+    while(b>0)
+    {
+        k=b%10;
+        j+=k*k;
+        b/=10;
+    }
+    while(j>=10)
+    {
+        j=s(j);
+    }
+    return j;
+}
+int main()
+{
+    long long int b,c,d,e,f,g,h,i,j,k,l,o,a;
+    while(scanf("%lld",&c)==1)
+    {
+        for(i=1;i<=c;i++)
+        {
+            scanf("%lld",&a);
+        b=s(a);
+        if(b==1)
+        printf("Case #%lld: %lld is a Happy number.\n",i,a);
+        else
+        printf("Case #%lld: %lld is an Unhappy number.\n",i,a);
+        }
+    }
+    return 0;
+}

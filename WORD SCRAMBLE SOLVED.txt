@@ -1,0 +1,46 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+    int a,b,c,d,e,f,g,h,i,j,u;
+    char w,er[90001];
+    c=0;
+    while(scanf("%s",&er)==1)
+    {
+        b=strlen(er);
+        for(i=b-1;i>=0;i--)
+        {
+            printf("%c",er[i]);
+        }
+        scanf("%c",&w);
+        printf("%c",w);
+    }
+
+    return 0;
+}

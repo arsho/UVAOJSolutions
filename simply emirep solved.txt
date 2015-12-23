@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<math.h>
+int prime(long int p)
+{
+
+    int i;
+    for(i=2;i<=sqrt(p);i++)
+    {
+        if(p%i==0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+long int reverse(long int p)
+{
+    long int x,rev;
+    rev=0;
+    while(p>0)
+    {
+        x=p%10;
+        rev=(rev*10)+x;
+        p=p/10;
+    }
+    return rev;
+}
+int main()
+{
+    long int a,b,c,d,e,f;
+    int i,j,k;
+    while(scanf("%ld",&a)==1)
+    {
+        if(a<=1)
+        printf("%ld is not prime.\n",a);
+        else
+        {
+            if(prime(a)==1 && prime(reverse(a))==1 && a!=reverse(a))
+            {
+                printf("%ld is emirp.\n",a);
+            }
+            else if(prime(a)==1 && (prime(reverse(a))==0 || a==reverse(a)))
+            {
+                printf("%ld is prime.\n",a);
+            }
+            else printf("%ld is not prime.\n",a);
+        }
+
+    }
+    return 0;
+}

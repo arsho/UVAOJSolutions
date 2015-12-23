@@ -1,0 +1,33 @@
+#include<stdio.h>
+long int a,b,c,d,i,m;
+int main()
+{
+    while(scanf("%ld",&a)==1)
+    {
+        for(i=1;i<=a;i++)
+        {
+            scanf("%ld%ld%ld",&b,&c,&d);
+            if(b>c && c>d)
+            m=c;
+            else if(d>c && c>b)
+            m=c;
+            else if(c>d && d>b)
+            m=d;
+            else if(b>d && d>c)
+            m=d;
+            else if(c>b && b>d)
+            m=b;
+            else if(d>b && b>c)
+            m=b;
+            else if(b==c && b>d)
+            m=d;
+            else if(b==d && b>c)
+            m=c;
+            else if(d==c && d>b)
+            m=b;
+        printf("Case %ld: %ld\n",i,m);
+        m=0;
+        }
+    }
+return 0;
+}

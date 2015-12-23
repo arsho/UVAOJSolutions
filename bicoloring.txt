@@ -1,0 +1,68 @@
+#include <bits/stdc++.h>
+using namespace std;
+int change(int col)
+{
+        int a;
+        if(col==1)
+                a=5;
+        else
+                a=1;
+        return a;
+}
+main()
+{
+        int n,l,i,j,a,b,c;
+        while(cin>>n &&n)
+        {
+                vector<int>G[5000];
+                int topc,tmp,v,top,first,second,source;
+                cin>>l;
+                for(i=0;i<l;i++)
+                {
+                        cin>>first>>second;
+                        G[first].push_back(second);
+                        G[second].push_back(first);
+
+                        if(i==0)
+                                source=first;
+                }
+                int vis[5000],col[5000];
+                for(i=0;i<5000;i++)
+                {
+                        vis[i]=0;
+                        col[i]=0;
+                }
+                vis[source]=1;
+                col[source]=1;
+                queue<int>q;
+                q.push(source);
+                bool check=true;
+                while(!q.empty())
+                {
+                        top=q.front();
+                        topc=col[top];
+                        for(i=0;i<G[top].size();i++)
+                        {
+                                v=G[top][i];
+                                if(vis[v]==0)
+                                {
+                                        tmp=change(topc);
+                                        col[v]=tmp;
+                                        vis[v]=1;
+                                        q.push(v);
+                                }
+                                if(col[v]==topc)
+                                {
+                                        check=false;
+                                        break;
+                                }
+                        }
+                        q.pop();
+                }
+                if(check==true)
+                        cout<<"BICOLORABLE.\n";
+                else
+                        cout<<"NOT BICOLORABLE.\n";
+        }
+    return 0;
+}

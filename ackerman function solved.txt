@@ -1,0 +1,67 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+long long int n(long long int a)
+{
+        long long int count=0;
+        if(a==1)
+        count=3;
+       while(a!=1)
+       {
+        if(a%2==0)
+                a=a/2;
+        else
+                a=(3*a+1);
+       count++;
+       }
+       return count;
+}
+int main()
+{
+        long long int a,b,num,c,maxi,i,max,min;
+        while(scanf("%lld%lld",&a,&b)==2)
+        {
+                if(a==0&&b==0)
+                break;
+                max=(a>b)?a:b;
+                min=(a<b)?a:b;
+                maxi=-9999;
+                for(i=min;i<=max;i++)
+                {
+                        c=n(i);
+                        if(c>maxi)
+                        {
+                             maxi=c;
+                             num=i;
+                        }
+
+                }
+                printf("Between %lld and %lld, %lld generates the longest sequence of %lld values.\n",min,max,num,maxi);
+        }
+        return 0;
+}

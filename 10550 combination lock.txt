@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+main()
+{
+        double ans,x,y,z,tmp,a,b,c,d,ini;
+        while(cin>>ini>>x>>y>>z)
+        {
+                if(ini==0 && x==0 && y==0 && z==0)
+                        break;
+                tmp=360.0/40.0;
+                ans=1080;
+                a=(x>ini)?(ini+40-x):(ini-x);
+                b=(x>y)?(y+40-x):(y-x);
+                c=(z>y)?(y+40-z):(y-z);
+                ans+=(a+b+c)*9;
+                cout<<ans<<endl;
+        }
+        return 0;
+}

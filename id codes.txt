@@ -1,0 +1,50 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define mod 1000000000
+
+int main()
+{
+        char s[100];
+        int a,b,c,i,j,len;
+        while(gets(s))
+        {
+                if(s[0]=='#')
+                        break;
+                len=strlen(s);
+                if(next_permutation(s, s+len) )
+                        cout<<s<<endl;
+                else
+                        cout<<"No Successor"<<endl;
+        }
+      return 0;
+}

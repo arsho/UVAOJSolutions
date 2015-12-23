@@ -1,0 +1,45 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+using namespace std;
+int main()
+{
+        long a[20010],b,c,i,j,dis;
+        scanf("%ld",&b);
+        for(i=0;i<b;i++)
+        {
+                scanf("%ld",&c);
+                for(j=0;j<c;j++)
+                scanf("%ld",&a[j]);
+                dis=0;
+                sort(a,a+c);
+                for(j=c-3;j>=0;j=j-3)
+                dis+=a[j];
+                printf("%ld\n",dis);
+        }
+        return 0;
+}

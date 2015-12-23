@@ -1,0 +1,51 @@
+import java.math.*;
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner (System.in);
+		BigInteger num1,num2,res,ressho;
+                String line1,line2,result;
+                int i,j,cas;
+                cas=sc.nextInt();
+                for(i=1;i<=cas;i++)
+                {
+                    line1=sc.next();
+                    line2=sc.next();
+                    
+                   
+                    StringBuilder s=new StringBuilder(line1);
+                    s.reverse();
+                    String num12=s.toString();
+                    num1=new BigInteger(num12);
+                   
+                    
+                    StringBuilder s1=new StringBuilder(line2);
+                    s1.reverse();
+                    String num22=s1.toString();
+                    num2=new BigInteger(num22);
+                    
+                  
+                    
+                    res=num1.add(num2);
+                    
+                    result=res.toString();
+                    
+                     StringBuilder fina=new StringBuilder(result);
+                     fina.reverse();
+                     
+                     String finalstring=fina.toString();
+                     ressho=new BigInteger(finalstring);
+                    
+                    System.out.println(ressho);
+                    
+                    
+                    
+                }
+                
+	}
+}

@@ -1,0 +1,85 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+#define uld unsingned long long
+#define ld long long
+#define inf INT_MAX
+#define pi 2*acos(0.0)
+#define vi vector<int>
+#define  vl vector<long long>
+#define pdd pair<int, int>
+#define pll pair<long long, long long>
+#define mp make_pair
+#define mdd map<int, int>
+#define mod 1000000000
+#define pf first
+#define ps second
+#define vsort(v) sort(v.begin(), v.end())
+#define cas(a) printf("Case %d:",a)
+#define pb push_back
+#define EPS 1e-7
+int main()
+{
+    int a,b,d,e,f,i,j,n,m,c,cas;
+    scanf("%d",&cas);
+     cin.ignore(100, '\n');
+  cin.ignore(100, '\n');
+    while(cas--)
+    {
+        string normal,cyp,in,out;
+        map<char,char>sho;
+        sho.clear();
+        getline(cin,normal);
+        getline(cin,cyp);
+        for(j=0; j<normal.size(); j++)
+        {
+            sho[normal[j]]=cyp[j];
+        }
+        cout << cyp << endl;
+    cout << normal << endl;
+        while(getline(cin,in))
+        {
+            if(in=="")
+                break;
+            for(a=0; a<in.size(); a++)
+            {
+                if(sho.find(in[a])==sho.end())
+                    cout<<in[a];
+                else
+                    cout<<sho[in[a]];
+
+            }
+            cout<<endl;
+
+        }
+ if (cas)
+      cout << endl;
+  }
+}

@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+   float a,b,angle;
+   while(scanf("%f:%f",&a,&b)==2)
+   {
+    if(a==0.0 && b==0.0)
+    break;
+    angle=30*a-5.5*b;
+    if(angle>180)
+    angle=360-angle;
+    if(angle<0)
+    angle=angle*(-1);
+    printf("%.3f\n",angle);
+   }
+return 0;
+}

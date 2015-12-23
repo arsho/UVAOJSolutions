@@ -1,0 +1,32 @@
+
+import java.lang.*;
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    
+    public static void main(String[] args) {
+      
+        Scanner sc=new Scanner(System.in);
+        String a,b;
+        int d,e,i;
+        while(sc.hasNext())
+        {
+            a=sc.next();
+            d=sc.nextInt();
+            e=sc.nextInt();
+           long num=Long.parseLong(a, d);
+           
+            b=Long.toString(num, e);
+            if(b.length()>7)
+            {
+                System.out.printf("%7s\n","ERROR");
+            }
+            else
+                System.out.printf("%7S\n",b);
+        }
+        
+    }
+}

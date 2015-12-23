@@ -1,0 +1,53 @@
+#include<cstdio>
+#include<cstring>
+#include<cassert>
+#include<vector>
+#include<list>
+#include<queue>
+#include<map>
+#include<set>
+#include<deque>
+#include<stack>
+#include<bitset>
+#include<algorithm>
+#include<functional>
+#include<numeric>
+#include<utility>
+#include<sstream>
+#include<iostream>
+#include<iomanip>
+#include<cmath>
+#include<cstdlib>
+#include<ctime>
+#include<fstream>
+#include<typeinfo>
+#include<locale>
+#include<iterator>
+#include<valarray>
+#include<complex>
+#include<climits>
+
+using namespace std;
+int main()
+{
+        int nb,ns,b[10005],s[10005],i,j,res,cas=0;
+        while(scanf("%d%d",&nb,&ns)==2)
+        {
+                if(nb==0&&ns==0)
+                break;
+                 cas++;
+                 for(i=0;i<nb;i++)
+                 scanf("%d",&b[i]);
+                 for(j=0;j<ns;j++)
+                 scanf("%d",&s[j]);
+                if(nb<=ns)
+                printf("Case %d: 0\n",cas);
+               else
+               {
+                       sort(b,b+nb);
+                       res=b[0];
+                       printf("Case %d: %d %d\n",cas,nb-ns,res);
+               }
+        }
+      return 0;
+}

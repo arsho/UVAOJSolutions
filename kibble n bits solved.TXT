@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cmath>
+#include <cstdio>
+#include <bitset>
+using namespace std;
+int main()
+{
+        int result,cas,i,j,a,b;
+        char c;
+        scanf("%d",&cas);
+        for(i=1;i<=cas;i++)
+        {
+
+
+        cin >> hex >> a >> c >> hex >> b;
+
+		if (c == '+') result = a + b;
+		else result = a - b;
+
+		cout << bitset<13>(a) << " " << c << " " << bitset<13>(b) << " = " << result << endl;
+        }
+      return 0;
+}
